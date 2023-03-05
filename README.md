@@ -1,4 +1,4 @@
-# Vue Template
+# project
 
 ## Project setup
 

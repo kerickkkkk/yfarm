@@ -1,0 +1,57 @@
+<script setup>
+import { RouterLink, RouterView } from 'vue-router'
+</script>
+
+<template>
+  <div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <div class="container-fluid">
+        <RouterLink
+          class="navbar-brand"
+          to="/admin"
+        >
+          首頁
+        </RouterLink>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon" />
+        </button>
+        <div
+          id="navbarCollapse"
+          class="collapse navbar-collapse"
+        >
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <RouterLink
+                class="nav-link active"
+                aria-current="page"
+                to="/"
+              >
+                前往前台
+              </RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink
+                class="nav-link active"
+                aria-current="page"
+                to="/admin/products"
+              >
+                產品列表
+              </RouterLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <RouterView />
+  </div>
+</template>
+
+<style scoped lang="scss"></style>

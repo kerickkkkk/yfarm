@@ -64,7 +64,8 @@ const requestConfig = (config) => {
     .find((row) => row.startsWith('ttShopToken='))
     ?.split('=')[1]
   if (token) {
-    config.headers.Authorization = `Bearer ${token}`
+    // 看狀況這邊是不用加上 Bearer 其他可能還是要
+    config.headers.Authorization = `${token}`
   }
   // if (store.getters['user/token']) {
   //   // let each request carry token

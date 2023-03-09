@@ -19,7 +19,7 @@ const checkLogin = () => {
       }
     })
     .catch((error) => {
-      swal(error?.response?.data)
+      swal('', error?.response?.data?.message || '有錯誤', 'error')
       router.push('/login')
     })
 }

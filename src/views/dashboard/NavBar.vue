@@ -1,16 +1,19 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { computed } from 'vue'
+import { useRoute, RouterLink, RouterView } from 'vue-router'
+const route = useRoute()
+const currentRouteName = computed(() => route.name || '')
 </script>
 
 <template>
   <div>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-2">
       <div class="container-fluid">
         <RouterLink
           class="navbar-brand"
           to="/admin"
         >
-          首頁
+          儀表板
         </RouterLink>
         <button
           class="navbar-toggler"
@@ -30,7 +33,7 @@ import { RouterLink, RouterView } from 'vue-router'
           <ul class="navbar-nav ms-auto mb-2 mb-md-0">
             <li class="nav-item">
               <RouterLink
-                class="nav-link active"
+                class="nav-link"
                 aria-current="page"
                 to="/"
               >
@@ -39,7 +42,8 @@ import { RouterLink, RouterView } from 'vue-router'
             </li>
             <li class="nav-item">
               <RouterLink
-                class="nav-link active"
+                :class="{ active : currentRouteName === 'DashboardProducts'}"
+                class="nav-link"
                 aria-current="page"
                 to="/admin/products"
               >

@@ -1,0 +1,40 @@
+$utilities: map-merge(
+    $utilities,
+    (
+        "position":
+            map-merge(
+                map-get($utilities, "position"),
+                (
+                    responsive: true,
+                )
+            ),
+        "translate-middle":
+            map-merge(
+                map-get($utilities, "translate-middle"),
+                (
+                    responsive: true,
+                )
+            ),
+        "width":
+            map-merge(
+                map-get($utilities, "width"),
+                (
+                    responsive: true,
+                )
+            ),
+        "overflow":
+            map-merge(
+                map-get($utilities, "overflow"),
+                (
+                    responsive: true,
+                )
+            ),
+        "font-size":
+            map-merge(
+                map-get($utilities, "font-size"),
+                (
+                    responsive: true,
+                )
+            ),
+    )
+);

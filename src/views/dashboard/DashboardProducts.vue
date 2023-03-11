@@ -215,6 +215,7 @@ onMounted(() => {
     </table>
     <div v-if="pagination?.total_pages">
       <Pagination
+        v-if="pagination"
         :current-page="pagination.current_page"
         :total-pages="pagination.total_pages"
         :has-next="pagination.has_next"

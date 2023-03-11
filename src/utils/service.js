@@ -2,6 +2,8 @@ import axios from 'axios'
 // import store from '@/store'
 // import { getLocalStorageToken } from '@/utils/auth'
 import { useStatusStore } from '@/stores/statusStore.js'
+import Swal from 'sweetalert2'
+
 const baseUrl = import.meta.env.VITE_BASE_URL
 const apiPath = import.meta.env.VITE_PATH
 
@@ -77,6 +79,9 @@ const requestConfig = (config) => {
 }
 
 const requestErrorHandler = (error) => {
+  const statusStore = useStatusStore()
+  const { setLoading } = statusStore
+  setLoading(false)
   // do something with request error
   console.log(error) // for debug
   return Promise.reject(error)
@@ -141,8 +146,14 @@ const responseConfig = (response) => {
 }
 
 const responseErrorHandler = (error) => {
+  const statusStore = useStatusStore()
+  const { setLoading } = statusStore
+  setLoading(false)
   console.log('err' + error) // for debug
   // do something
+
+  // 集中處理錯誤 目前都是相同回饋，下游只要接就好了
+  Swal.fire('', error?.response?.data?.message && typeof error?.response?.data?.message === 'string' ? error?.response?.data?.message : '有錯誤', 'error')
   return Promise.reject(error)
 }
 

@@ -1,8 +1,26 @@
 <script setup>
-import { computed } from 'vue'
-import { useRoute, RouterLink, RouterView } from 'vue-router'
+import { computed, inject } from 'vue'
+import { useRoute, useRouter, RouterLink, RouterView } from 'vue-router'
+import { logoutApi } from '@/api/dashboard/user.js'
+import { deleteCookie } from '@/utils/tools.js'
+
 const route = useRoute()
+const router = useRouter()
+const swal = inject('$swal')
+
 const currentRouteName = computed(() => route.name || '')
+const logout = () => {
+  logoutApi()
+    .then((response) => {
+      if (response.data.success) {
+        swal(response.data.message)
+        deleteCookie()
+        router.push('/login')
+      } else {
+        swal('有錯誤')
+      }
+    }).catch()
+}
 </script>
 
 <template>
@@ -58,6 +76,16 @@ const currentRouteName = computed(() => route.name || '')
             >
               產品列表
             </RouterLink>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              aria-current="page"
+              role="button"
+              @click.prevent="logout"
+            >
+              登出
+            </a>
           </li>
         </ul>
       </div>

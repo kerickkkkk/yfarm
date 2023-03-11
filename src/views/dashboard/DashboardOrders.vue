@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, inject } from 'vue'
 import Pagination from '@/components/base/PaginationComponent.vue'
-import { getOrdersApi } from '@/api/dashboard/order.js'
+import { getOrdersApi, putOrderApi, deleteOrderApi } from '@/api/dashboard/order.js'
 import { getLocalDate, currency } from '@/utils/filters.js'
 const swal = inject('$swal')
 const orders = ref([])
@@ -13,9 +13,25 @@ const getOrders = (page = 1) => {
       orders.value = data.orders
       pagination.value = data.pagination
     })
-    .catch((error) => {
-      swal('', error?.response?.data?.message || '有錯誤', 'error')
+    .catch()
+}
+const putOrder = (order, e) => {
+  // 如果是 checked 要用 checked 不然會找不到值
+  order.is_paid = e.target.checked
+  putOrderApi(order)
+    .then(({ data }) => {
+      swal(`${data.message}，訂單號碼：${order.id}`)
+      getOrders()
     })
+    .catch()
+}
+const deleteOrder = (id) => {
+  deleteOrderApi(id)
+    .then(({ data }) => {
+      swal(`訂單：${id}，${data.message} `)
+      getOrders()
+    })
+    .catch()
 }
 onMounted(() => {
   getOrders()
@@ -79,7 +95,7 @@ onMounted(() => {
                   :checked="order.is_paid"
                   class="form-check-input"
                   type="checkbox"
-                  @change="changePayment(order.id ,order)"
+                  @change="putOrder(order, $event)"
                 >
                 <label
                   class="form-check-label"
@@ -104,7 +120,7 @@ onMounted(() => {
                 <button
                   type="button"
                   class="btn btn-outline-danger"
-                  @click="modalHandler('delete', order.id)"
+                  @click="deleteOrder(order.id)"
                 >
                   刪除
                 </button>

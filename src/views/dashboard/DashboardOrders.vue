@@ -3,7 +3,9 @@ import { ref, onMounted, inject } from 'vue'
 import Pagination from '@/components/base/PaginationComponent.vue'
 import { getOrdersApi, putOrderApi, deleteOrderApi } from '@/api/dashboard/order.js'
 import { getLocalDate, currency } from '@/utils/filters.js'
+import OrderModal from './components/OrderModal.vue'
 const swal = inject('$swal')
+const orderModel = ref(null)
 const orders = ref([])
 const pagination = ref(null)
 
@@ -33,12 +35,19 @@ const deleteOrder = (id) => {
     })
     .catch()
 }
+const openModal = (order) => {
+  orderModel.value.show(order)
+}
 onMounted(() => {
   getOrders()
 })
 </script>
 
 <template>
+  <OrderModal
+    ref="orderModel"
+    @put-order="putOrder"
+  />
   <div class="container">
     <table class="table mb-3">
       <thead>
@@ -113,7 +122,7 @@ onMounted(() => {
                 <button
                   type="button"
                   class="btn btn-outline-primary"
-                  @click="modalHandler('edit', order.id ,{...order})"
+                  @click="openModal({...order})"
                 >
                   檢視
                 </button>

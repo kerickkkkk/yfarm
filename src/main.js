@@ -4,6 +4,7 @@ import router from './router'
 import pinia from './stores/index'
 import '@/scss/all.scss'
 import 'bootstrap'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 import VueSweetAlert from 'vue-sweetalert2'
 import 'sweetalert2/dist/sweetalert2.min.css'
 

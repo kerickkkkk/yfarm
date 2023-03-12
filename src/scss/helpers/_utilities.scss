@@ -8,6 +8,27 @@ $utilities: map-merge(
                     responsive: true,
                 )
             ),
+        "top":
+            map-merge(
+                map-get($utilities, "top"),
+                (
+                    responsive: true,
+                )
+            ),
+        "start":
+            map-merge(
+                map-get($utilities, "start"),
+                (
+                    responsive: true,
+                )
+            ),
+        "end":
+            map-merge(
+                map-get($utilities, "end"),
+                (
+                    responsive: true,
+                )
+            ),
         "translate-middle":
             map-merge(
                 map-get($utilities, "translate-middle"),
@@ -32,6 +53,13 @@ $utilities: map-merge(
         "font-size":
             map-merge(
                 map-get($utilities, "font-size"),
+                (
+                    responsive: true,
+                )
+            ),
+        "background-color":
+            map-merge(
+                map-get($utilities, "background-color"),
                 (
                     responsive: true,
                 )

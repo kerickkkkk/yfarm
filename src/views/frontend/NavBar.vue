@@ -3,7 +3,10 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-md position-md-fixed start-md-0 end-md-0 navbar-white mt-md-9 py-0">
+  <nav
+    style="z-index:9999;"
+    class="navbar navbar-expand-md position-fixed start-0 end-0 bg-white bg-md-transparent navbar-white mt-md-9 py-0"
+  >
     <div class="container w-md-100">
       <RouterLink
         class="d-md-none d-block"

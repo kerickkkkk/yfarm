@@ -300,7 +300,7 @@ $cyans: (
 // scss-docs-start theme-color-variables
 $primary:       #E95516;//$blue !default;
 $secondary:     #A9C100;//$gray-600 !default;
-$neutral:       #D3D3D3;//
+$neutral:       #E2E2E2;//
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
@@ -601,9 +601,10 @@ $font-sizes: (
   1: 32px,//$h1-font-size,
   2: 28px,//$h2-font-size,
   3: 24px,//$h3-font-size,
-  4: 18px,//$h4-font-size,
-  5: 16px,//$h5-font-size,
-  6: 14px,//$h6-font-size
+  4: 20px,//$h4-font-size,
+  5: 18px,//$h5-font-size,
+  6: 16px,//$h6-font-size
+  7: 14px,//$h6-font-size
 ) !default;
 // scss-docs-end font-sizes
 
@@ -1259,7 +1260,7 @@ $card-spacer-x:                     $spacer !default;
 $card-title-spacer-y:               $spacer * .5 !default;
 $card-border-width:                 $border-width !default;
 $card-border-color:                 var(--#{$prefix}border-color-translucent) !default;
-$card-border-radius:                $border-radius !default;
+$card-border-radius:                12px;//$border-radius !default;
 $card-box-shadow:                   null !default;
 $card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
 $card-cap-padding-y:                $card-spacer-y * .5 !default;

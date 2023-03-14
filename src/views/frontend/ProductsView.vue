@@ -1,10 +1,10 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import { storeToRefs } from 'pinia'
 import ProductCard from '@/components/ProductCard.vue'
 import Pagination from '@/components/base/PaginationComponent.vue'
 import { useProductsStore } from '@/stores/productsStore'
-import { storeToRefs } from 'pinia'
-
+import SuggestionSwiper from '@/components/swiper/SuggestionSwiper.vue'
 const productsStore = useProductsStore()
 
 const { getProducts } = productsStore
@@ -23,7 +23,7 @@ onMounted(() => {
   />
   <div class="container">
     <div class="row py-6">
-      <div class="col-md-3">
+      <div class="col-md-3 mb-6">
         <div class="list-group">
           <li
             class="list-group-item list-group-item-dark"
@@ -37,19 +37,21 @@ onMounted(() => {
             :class="{active: item === currentCategory}"
             class="list-group-item list-group-item-action list-group-item-primary"
             aria-current="true"
-            @click="currentCategory = item"
+            @click="currentCategory = item;
+                    getProducts( pagination.currentPage, item)
+            "
           >
             {{ item }}
           </button>
         </div>
       </div>
       <div class="col-md-9">
-        <div class="row">
-          <template v-if="products.length > 0">
+        <template v-if="products.length > 0">
+          <div class="row">
             <div
               v-for="item in products"
               :key="item.id"
-              class="col-4 mb-4"
+              class="col-md-4 mb-4"
             >
               <ProductCard :item="item" />
             </div>
@@ -61,20 +63,35 @@ onMounted(() => {
               :has-pre="pagination.has_pre"
               @get-page="getProducts"
             />
-          </template>
-          <!-- 沒有反應需看 -->
-          <template v-else>
-            <div class="col-12">
-              <div class="h3 text-center">
-                沒有產品!
-              </div>
-            </div>
-          </template>
-        </div>
+          </div>
+        </template>
+        <template v-else>
+          <div class="h3 text-center">
+            沒有產品!
+          </div>
+        </template>
       </div>
+    </div>
+    <div class="row mb-8">
+      <h3 class="text-center my-4">
+        猜您喜歡
+      </h3>
+      <SuggestionSwiper :items="products" />
     </div>
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
+@import "bootstrap/scss/functions";
+@import "@/scss/helpers/variables";
 
+:deep(.swiper-pagination-bullet) {
+  width : calc(100vw * 72 / 1320);
+  border-radius: 4px;
+  height: 3px;
+  background-color: #fff;
+  opacity: 1;
+  &.swiper-pagination-bullet-active{
+    background-color: $secondary;
+  }
+}
 </style>

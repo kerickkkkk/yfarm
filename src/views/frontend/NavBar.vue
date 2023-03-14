@@ -171,5 +171,7 @@ onMounted(() => {
       </div>
     </div>
   </nav>
-  <RouterView />
+  <RouterView
+    :key="$route.fullPath"
+  />
 </template>

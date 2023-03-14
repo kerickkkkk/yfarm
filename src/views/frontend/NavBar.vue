@@ -29,7 +29,6 @@ import { RouterView } from 'vue-router'
       >
         <span class="navbar-toggler-icon" />
       </button>
-
       <div
         id="offcanvasExample"
         class="offcanvas offcanvas-start bg-light w-100"
@@ -59,11 +58,13 @@ import { RouterView } from 'vue-router'
               </RouterLink>
             </li>
             <li class="nav-item">
-              <a
+              <RouterLink
                 class="nav-link p-5"
                 aria-current="page"
-                href="#"
-              >產品</a>
+                to="/products"
+              >
+                產品
+              </RouterLink>
             </li>
             <li class="nav-item dropdown rounded-5">
               <button

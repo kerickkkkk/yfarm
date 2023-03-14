@@ -93,9 +93,12 @@ const modules = ref(
             <p class="h5 mb-8">
               將農產品送到消費者面前，提高農民們的收入，穩定農村家庭的經濟，讓每一份努力都能有更合理的回饋。
             </p>
-            <button class="btn btn-secondary">
+            <RouterLink
+              to="/intention"
+              class="btn btn-secondary"
+            >
               了解更多
-            </button>
+            </RouterLink>
           </div>
         </div>
       </div>

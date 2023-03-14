@@ -1,4 +1,10 @@
 <script setup>
+import { ref } from 'vue'
+import { currency } from '@/utils/filters.js'
+import SelectCountComponent from './base/SelectCountComponent.vue'
+import { useCartsStore } from '@/stores/cartsStore'
+const cartsStore = useCartsStore()
+const { addCart } = cartsStore
 
 const props = defineProps({
   item: {
@@ -6,11 +12,17 @@ const props = defineProps({
     default () {
       return {
         url: '',
-        title: '原味花生糖'
+        title: ''
       }
     }
   }
 })
+
+const qty = ref(1)
+const maxQty = ref(10)
+const setQty = (value) => {
+  qty.value = value
+}
 
 </script>
 
@@ -26,7 +38,7 @@ const props = defineProps({
     </button>
 
     <img
-      :src="props.item.url"
+      :src="props.item.imageUrl"
       class="card-img-top"
       style="height: 286px;"
       :alt="props.item.tile"
@@ -37,49 +49,31 @@ const props = defineProps({
       </h3>
       <div class="price d-flex w-25 mx-auto mb-5">
         <div class="original h4">
-          $120
+          ${{ currency(props.item.price) }}
         </div>
         <del class="ms-auto h4 text-neutral">
-          $170
+          ${{ currency(props.item.origin_price) }}
         </del>
       </div>
 
-      <div class="input-group mb-0 w-50 mx-auto">
-        <button
-          id="button-addon1"
-          class="btn btn-outline-neutral"
-          type="button"
-        >
-          <i class="bi bi-plus" />
-        </button>
-        <select
-          id=""
-          class="form-control"
-        >
-          <option
-            v-for="n in 10"
-            :key="n"
-            :value="n"
-            class="text-center"
-          >
-            {{ n }}
-          </option>
-        </select>
-        <button
-          id="button-addon2"
-          class="btn btn-outline-neutral"
-          type="button"
-        >
-          —
-        </button>
-      </div>
+      <SelectCountComponent
+        :qty="qty"
+        :max-qty="maxQty"
+        @set-qty="setQty"
+      />
     </div>
     <div class="card-footer p-0">
       <div class="d-flex">
-        <button class="btn py-4 btn-outline-neutral w-50 rounded-0">
+        <RouterLink
+          :to="`/product/${item.id}`"
+          class="btn py-4 btn-outline-neutral w-50 rounded-0"
+        >
           看詳細
-        </button>
-        <button class="btn py-4 btn-secondary w-50 rounded-0">
+        </RouterLink>
+        <button
+          class="btn py-4 btn-secondary w-50 rounded-0"
+          @click="addCart(props.item.id ,qty)"
+        >
           <i class="bi bi-cart-fill" />
         </button>
       </div>

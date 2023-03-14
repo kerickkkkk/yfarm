@@ -1,14 +1,25 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import { storeToRefs } from 'pinia'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import ProductCard from '@/components/ProductCard.vue'
+import { useProductsStore } from '@/stores/productsStore'
 import { Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
+const productsStore = useProductsStore()
+const { getProducts } = productsStore
+const { productsGetter: products } = storeToRefs(productsStore)
 
 const modules = ref(
   [Pagination]
 )
+const filterProducts = computed(() => {
+  return products.value.filter(item => item.origin_price !== item.price)
+})
+onMounted(() => {
+  getProducts()
+})
 </script>
 
 <template>
@@ -55,16 +66,13 @@ const modules = ref(
       class="container position-relative rounded-5 rounded-top-0"
     >
       <SwiperSlide
-        v-for="n in 5"
-        :key="n"
+        v-for="item in filterProducts"
+        :key="item"
         class="col-4 pb-9"
       >
         <div class="w-100">
           <ProductCard
-            :item="{
-              n,
-              url:'https://storage.googleapis.com/vue-course-api.appspot.com/vue3/1677051561718.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=euZ3n0ioz%2Bii12oEy3Gg5d%2FqsevbdDTqE5%2F87D%2BEwGtEdRImnEWGMBVgqNf%2FzUHQg9fBSgOKCxvCIYeNacvqrVL6AhE6togtSgxER7arZ6bJ3OSnNI3v2gb8YAUWkCP%2FT%2B1Nn5a4H%2FPfiVkG8YL%2FD6nG82SmusQMn8p04pi59ZO4CCWCrrDPqrx%2FW19JxK4ga4%2BKkAGA8qVQobk%2B68IMMfvoKgfC0Xv4ZZSGOb4IPhIt%2BWNMfenoxNd6YwsecKqE5eSOn5iN15eADo3hPGC4cByYWGWesnqPghmjcWosRA685YBUzWZ1ayQa%2B6iTuoTknaFbdLFohDSSlBldP32v%2Bw%3D%3D'
-            }"
+            :item="item"
           />
         </div>
       </SwiperSlide>

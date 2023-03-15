@@ -135,10 +135,10 @@ onMounted(() => {
           </ul>
           <ul class="navbar-nav bg-md-primary text-center rounded-3">
             <li class="nav-item bg-white bg-md-transparent mb-4 mb-md-0">
-              <a
+              <RouterLink
                 class="text-md-white nav-link py-5 px-md-4 position-relative"
                 aria-current="page"
-                href="#"
+                to="/cart"
               >
                 <div class="position-md-relative">
                   <i class="bi bi-cart-fill" />
@@ -146,7 +146,7 @@ onMounted(() => {
                     {{ cartsGetter.length }}
                   </div>
                 </div>
-              </a>
+              </RouterLink>
             </li>
             <li class="nav-item bg-white bg-md-transparent mb-4 mb-md-0">
               <a

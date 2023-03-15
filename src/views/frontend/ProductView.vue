@@ -92,13 +92,13 @@ onMounted(() => {
           >
             加入購物車
           </button>
-          <button
+          <RouterLink
+            to="/cart"
             type="button"
             class="btn btn-secondary"
-            @click.prevent="goCheckout"
           >
             直接結帳
-          </button>
+          </RouterLink>
         </div>
       </div>
     </div>

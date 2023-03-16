@@ -1,0 +1,1 @@
+import{_ as n}from"./plugin-vueexport-helper-c27b6911.js";import{a as t,c as o,F as c,b as e}from"./index-8f748ede.js";const r={},s=e("h1",null,"創立初衷",-1),a=e("p",null," 從小就在田野中長大的鄕下孩子，扣除上學的時間外，孩提的記憶中都是在田野或是三合院度過，手上拿著東西不是鉛筆或是GAME BOY，而是鐮刀跟鋤頭，眼裡看到的景色就是黃黃的一堆土，藍藍的一片天，綠綠的一畝田。 ",-1);function _(l,i){return t(),o(c,null,[s,a],64)}const d=n(r,[["render",_]]);export{d as default};

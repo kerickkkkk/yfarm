@@ -9,6 +9,13 @@ export function getProductsApi (page = 1, category = '') {
     url: `/products?${parameter}`
   })
 }
+export function getAllProductsApi () {
+  // 調整加入 分類
+  return service({
+    method: 'GET',
+    url: '/products/all'
+  })
+}
 export function getProductApi (id) {
   return service({
     method: 'GET',

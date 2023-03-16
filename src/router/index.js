@@ -49,6 +49,11 @@ const routes = [
         meta: {
           step: 3
         }
+      },
+      {
+        path: 'likes',
+        name: 'Likes',
+        component: () => import('../views/frontend/LikesView.vue')
       }
 
     ]

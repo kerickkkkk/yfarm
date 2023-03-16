@@ -2,13 +2,16 @@
 import { onMounted } from 'vue'
 import { useCartsStore } from '@/stores/cartsStore'
 import { storeToRefs } from 'pinia'
-
+import { useLikesStore } from '@/stores/likesStore.js'
 const cartsStore = useCartsStore()
-
+const likesStore = useLikesStore()
 const { getCarts } = cartsStore
+const { getLikes } = likesStore
 const { cartsGetter } = storeToRefs(cartsStore)
+const { likesGetter } = storeToRefs(likesStore)
 onMounted(() => {
   getCarts()
+  getLikes()
 })
 </script>
 
@@ -149,13 +152,18 @@ onMounted(() => {
               </RouterLink>
             </li>
             <li class="nav-item bg-white bg-md-transparent mb-4 mb-md-0">
-              <a
-                class="nav-link px-md-4 py-5"
+              <RouterLink
+                class="nav-link px-md-4 py-5 position-relative"
                 aria-current="page"
-                href="#"
+                to="/likes"
               >
-                <i class="bi bi-heart-fill" />
-              </a>
+                <div class="position-md-relative">
+                  <i class="bi bi-heart-fill" />
+                  <div class="position-absolute top-md-0 top-50 fs-md-6 end-md-auto end-0 start-md-100 rounded-circle text-white py-md-0 py-1 px-2 bg-secondary translate-middle-md translate-middle-y">
+                    {{ likesGetter.length }}
+                  </div>
+                </div>
+              </RouterLink>
             </li>
             <li class="nav-item bg-white bg-md-transparent mb-4 mb-md-0">
               <RouterLink

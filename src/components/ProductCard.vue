@@ -3,9 +3,14 @@ import { ref } from 'vue'
 import { currency } from '@/utils/filters.js'
 import SelectCountComponent from './base/SelectCountComponent.vue'
 import { useCartsStore } from '@/stores/cartsStore'
+import { useLikesStore } from '@/stores/likesStore.js'
+import { storeToRefs } from 'pinia'
 const cartsStore = useCartsStore()
 const { addCart } = cartsStore
+const likesStore = useLikesStore()
 
+const { setLike } = likesStore
+const { likesGetter } = storeToRefs(likesStore)
 const props = defineProps({
   item: {
     type: Object,
@@ -31,8 +36,10 @@ const setQty = (value) => {
     class="card position-relative overflow-hidden"
   >
     <button
+      :class="{active: likesGetter?.includes(props.item.id)}"
       type="button"
       class="customBtn position-absolute top-0 end-0 bg-white fs-2 p-4 rounded-circle border-0 m-5"
+      @click="setLike(props.item.id)"
     >
       <i class="bi bi-heart-fill" />
     </button>

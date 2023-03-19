@@ -4,7 +4,7 @@ const routes = [
   {
     path: '/',
     name: 'FrontEnd',
-    component: () => import('../views/frontend/NavBar.vue'),
+    component: () => import('../views/frontend/LayoutView.vue'),
     children: [
       {
         path: '',

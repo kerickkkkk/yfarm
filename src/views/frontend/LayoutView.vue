@@ -3,6 +3,8 @@ import { onMounted } from 'vue'
 import { useCartsStore } from '@/stores/cartsStore'
 import { storeToRefs } from 'pinia'
 import { useLikesStore } from '@/stores/likesStore.js'
+import FooterView from './components/FooterView.vue'
+
 const cartsStore = useCartsStore()
 const likesStore = useLikesStore()
 const { getCarts } = cartsStore
@@ -182,4 +184,5 @@ onMounted(() => {
   <RouterView
     :key="$route.fullPath"
   />
+  <FooterView />
 </template>

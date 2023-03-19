@@ -78,6 +78,16 @@ const logout = () => {
             </RouterLink>
           </li>
           <li class="nav-item">
+            <RouterLink
+              :class="{ active : currentRouteName === 'DashboardArticles'}"
+              class="nav-link"
+              aria-current="page"
+              to="/admin/articles"
+            >
+              最新消息
+            </RouterLink>
+          </li>
+          <li class="nav-item">
             <a
               class="nav-link"
               aria-current="page"

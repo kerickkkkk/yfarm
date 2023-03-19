@@ -138,7 +138,7 @@ onMounted(() => {
       </div>
     </div>
   </section>
-  <section class="messages mb-13">
+  <section class="articles mb-13">
     <div class="container">
       <div class="row">
         <div class="col-md-2">

@@ -82,6 +82,11 @@ const routes = [
         path: 'orders',
         name: 'DashboardOrders',
         component: () => import('../views/dashboard/DashboardOrders.vue')
+      },
+      {
+        path: 'articles',
+        name: 'DashboardArticles',
+        component: () => import('../views/dashboard/DashboardArticles.vue')
       }
     ]
   }

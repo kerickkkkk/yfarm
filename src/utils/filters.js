@@ -10,7 +10,7 @@ export const currency = (num) => {
 
 export const getLocalDate = (time) => {
   // return computed(() => {
-  const localDate = new Date(time * 1000)
+  const localDate = new Date(time)
   return localDate.toLocaleDateString()
   // }).value
 }

@@ -1,4 +1,5 @@
 <script setup>
+import { goTop } from '@/utils/tools.js'
 const emit = defineEmits(['getPage'])
 const props = defineProps({
   currentPage: {
@@ -29,6 +30,7 @@ const props = defineProps({
 
 const getPage = (page) => {
   emit('getPage', page)
+  goTop()
 }
 </script>
 

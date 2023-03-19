@@ -124,11 +124,13 @@ onMounted(() => {
               </ul>
             </li>
             <li class="nav-item">
-              <a
+              <RouterLink
+                to="/articles"
                 class="nav-link active p-5"
                 aria-current="page"
-                href="#"
-              >最新消息</a>
+              >
+                最新消息
+              </RouterLink>
             </li>
             <li class="nav-item">
               <a

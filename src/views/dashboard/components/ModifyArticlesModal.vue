@@ -17,7 +17,6 @@ const show = (outerIsNew, article) => {
   } else {
     getArticleApi(article.id)
       .then(({ data }) => {
-        console.log(data)
         tempArticle.value = data.article
         modal.value.show()
       })
@@ -76,7 +75,6 @@ const removeTag = (index) => {
   tempArticle.value.tag.splice(index, 1)
 }
 const onImageError = (event) => {
-  console.log('onimgerror', noImage)
   event.target.src = noImage
 }
 onMounted(() => {

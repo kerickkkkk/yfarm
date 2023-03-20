@@ -10,7 +10,6 @@ const articles = ref([])
 const pagination = ref(null)
 
 const getArticles = (page = 1) => {
-  console.log(page)
   getArticlesApi(page)
     .then((response) => {
       articles.value = response.data.articles || []

@@ -102,7 +102,7 @@ onMounted(() => {
               將農產品送到消費者面前，提高農民們的收入，穩定農村家庭的經濟，讓每一份努力都能有更合理的回饋。
             </p>
             <RouterLink
-              to="/intention"
+              to="/article/-NQriuKkfh9dcMlUC3tE"
               class="btn btn-secondary"
             >
               了解更多
@@ -129,11 +129,14 @@ onMounted(() => {
             </span>
           </h2>
           <p class="h5 mb-8">
-            將農產品送到消費者面前，提高農民們的收入，穩定農村家庭的經濟，讓每一份努力都能有更合理的回饋。
+            楊家農舍的所有產品特色就是當季收成的作物，並在產品銷售前完成土地的重金屬殘留檢驗、310項農藥殘留檢驗及營養成份檢驗分析。
           </p>
-          <button class="btn btn-secondary">
+          <RouterLink
+            to="/article/-NQs22hPrf7Q0y7J3_jr"
+            class="btn btn-secondary"
+          >
             了解更多
-          </button>
+          </RouterLink>
         </div>
       </div>
     </div>

@@ -51,11 +51,11 @@ onMounted(() => {
                     class="badge rounded-pill text-bg-light"
                   >{{ item }}</span>
                 </div>
-                <h5 class="card-title">
+                <h2 class="card-title">
                   {{ article.title }}
-                </h5>
+                </h2>
                 <p class="card-text">
-                  {{ article.description }}
+                  {{ article.content }}
                 </p>
                 <p class="card-text text-end">
                   <RouterLink

@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="py-10 rounded-top-5 bg-cover"
+    class="rounded-top-5 bg-cover py-10 mt-12"
     style="backgroundImage: linear-gradient(to right, rgba(169, 193, 0 , 0.9), rgba(169, 193, 0, 0.9)), url(./images/ImgFooter.jpg)"
   >
     <div class="container text-white">

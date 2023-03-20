@@ -1,15 +1,12 @@
 <script setup>
 import CartStep from '@/components/CartStep.vue'
 import { useRoute } from 'vue-router'
-
+import BannerView from './components/BannerView.vue'
 const route = useRoute()
 const step = route.meta.step
 </script>
 <template>
-  <div
-    class="bg-cover"
-    style="height: 40vh; backgroundImage: url(./images/ImgAbout01.png)"
-  />
+  <BannerView />
   <div class="container">
     <CartStep :step="step" />
     <div class="container">

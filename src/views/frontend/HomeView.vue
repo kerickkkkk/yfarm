@@ -159,47 +159,18 @@ onMounted(() => {
             >
               <div class="d-flex">
                 <div class="h6 me-5">
-                  2023-01-12
+                  2023-01-01
                 </div>
                 <h3 class="h5">
-                  新年快樂
+                  2023 新年快樂
                 </h3>
               </div>
-              <button class="btn btn-outline-secondary">
+              <RouterLink
+                to="/article/-NQs2SkNEVTKr41YyeG1"
+                class="btn btn-outline-secondary"
+              >
                 官方公告
-              </button>
-            </li>
-            <li
-              class="border-bottom border-primary border-3 d-flex justify-content-between align-items-center py-5"
-              style="--bs-border-opacity: .1;"
-            >
-              <div class="d-flex">
-                <div class="h6 me-5">
-                  2023-01-12
-                </div>
-                <h3 class="h5">
-                  新年快樂
-                </h3>
-              </div>
-              <button class="btn btn-outline-secondary">
-                官方公告
-              </button>
-            </li>
-            <li
-              class="border-bottom border-primary border-3 d-flex justify-content-between align-items-center py-5"
-              style="--bs-border-opacity: .1;"
-            >
-              <div class="d-flex">
-                <div class="h6 me-5">
-                  2023-01-12
-                </div>
-                <h3 class="h5">
-                  新年快樂
-                </h3>
-              </div>
-              <button class="btn btn-outline-secondary">
-                官方公告
-              </button>
+              </RouterLink>
             </li>
           </ul>
         </div>

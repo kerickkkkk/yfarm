@@ -5,7 +5,7 @@ import ProductCard from '@/components/ProductCard.vue'
 import { storeToRefs } from 'pinia'
 import { RouterLink } from 'vue-router'
 import SuggestionSwiper from '@/components/swiper/SuggestionSwiper.vue'
-
+import BannerView from './components/BannerView.vue'
 const likesStore = useLikesStore()
 
 const { getAllProducts, getLikes } = likesStore
@@ -17,12 +17,9 @@ onMounted(async () => {
 })
 </script>
 <template>
-  <div
-    class="bg-cover"
-    style="height: 40vh; backgroundImage: url(./images/ImgAbout01.png)"
-  />
+  <BannerView />
   <div class="container">
-    <h2 class="text-center">
+    <h2 class="text-center mb-11">
       我的最愛
     </h2>
     <div class="row">
@@ -50,7 +47,7 @@ onMounted(async () => {
       </template>
     </div>
     <div class="row mb-8">
-      <h3 class="text-center my-4">
+      <h3 class="text-center mt-4 mb-9">
         猜您喜歡
       </h3>
       <SuggestionSwiper :items="noLikesProductsGetter" />

@@ -6,6 +6,7 @@ import { useCartsStore } from '@/stores/cartsStore'
 import { useRoute, useRouter } from 'vue-router'
 import CartStep from '@/components/CartStep.vue'
 import { postOrderApi } from '@/api/orders.js'
+import BannerView from './components/BannerView.vue'
 const route = useRoute()
 const router = useRouter()
 
@@ -64,10 +65,7 @@ onMounted(() => {
 
 </script>
 <template>
-  <div
-    class="bg-cover"
-    style="height: 40vh; backgroundImage: url(./images/ImgAbout01.png)"
-  />
+  <BannerView />
   <div class="container">
     <CartStep :step="step" />
   </div>

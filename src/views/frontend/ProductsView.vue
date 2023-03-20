@@ -5,6 +5,7 @@ import ProductCard from '@/components/ProductCard.vue'
 import Pagination from '@/components/base/PaginationComponent.vue'
 import { useProductsStore } from '@/stores/productsStore'
 import SuggestionSwiper from '@/components/swiper/SuggestionSwiper.vue'
+import BannerView from './components/BannerView.vue'
 const productsStore = useProductsStore()
 
 const { getProducts } = productsStore
@@ -17,10 +18,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div
-    class="bg-cover"
-    style="height: 40vh; backgroundImage: url(./images/ImgAbout01.png)"
-  />
+  <BannerView />
   <div class="container">
     <div class="row py-6">
       <div class="col-md-3 mb-6">
@@ -73,7 +71,7 @@ onMounted(() => {
       </div>
     </div>
     <div class="row mb-8">
-      <h3 class="text-center my-4">
+      <h3 class="text-center mt-4 mb-9">
         猜您喜歡
       </h3>
       <SuggestionSwiper :items="products" />

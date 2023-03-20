@@ -5,6 +5,7 @@ import { currency } from '@/utils/filters.js'
 import { useCartsStore } from '@/stores/cartsStore'
 import CartStep from '@/components/CartStep.vue'
 import { useRoute, useRouter } from 'vue-router'
+import BannerView from './components/BannerView.vue'
 const swal = inject('$swal')
 const route = useRoute()
 const router = useRouter()
@@ -29,10 +30,7 @@ onMounted(() => {
 
 </script>
 <template>
-  <div
-    class="bg-cover"
-    style="height: 40vh; backgroundImage: url(./images/ImgAbout01.png)"
-  />
+  <BannerView />
   <div class="container">
     <CartStep :step="step" />
   </div>

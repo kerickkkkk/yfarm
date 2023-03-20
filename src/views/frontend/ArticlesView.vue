@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { getArticlesApi } from '@/api/articles.js'
 import Pagination from '../../components/base/PaginationComponent.vue'
+import BannerView from './components/BannerView.vue'
 const articles = ref([])
 const pagination = ref({})
 const getAritcles = (page = 1) => {
@@ -17,12 +18,9 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div
-    class="bg-cover mb-5"
-    style="height: 40vh; backgroundImage: url(./images/ImgAbout01.png)"
-  />
+  <BannerView />
   <div class="container mb-8">
-    <h2 class="text-center mb-7">
+    <h2 class="text-center mb-11">
       <span class="dot">
         最新消息
       </span>

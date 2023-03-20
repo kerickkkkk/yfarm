@@ -6,7 +6,7 @@ import SelectCountComponent from '@/components/base/SelectCountComponent.vue'
 import SuggestionSwiper from '@/components/swiper/SuggestionSwiper.vue'
 import { useRoute } from 'vue-router'
 import { useCartsStore } from '@/stores/cartsStore'
-
+import BannerView from './components/BannerView.vue'
 const route = useRoute()
 const productsStore = useProductsStore()
 const cartsStore = useCartsStore()
@@ -30,10 +30,7 @@ onMounted(() => {
 
 </script>
 <template>
-  <div
-    class="bg-cover"
-    style="height: 40vh; backgroundImage: url(./images/ImgAbout01.png)"
-  />
+  <BannerView />
 
   <div class="container">
     <div class="row mb-3 p-5">
@@ -114,7 +111,7 @@ onMounted(() => {
   </div>
   <div class="container-fluid">
     <div class="row mb-8">
-      <h3 class="text-center my-4">
+      <h3 class="text-center mt-4 mb-9">
         猜您喜歡
       </h3>
       <SuggestionSwiper :items="products" />

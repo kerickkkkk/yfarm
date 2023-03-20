@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { getArticleApi } from '@/api/articles.js'
-
+import BannerView from './components/BannerView.vue'
 const route = useRoute()
 
 const article = ref([])
@@ -19,10 +19,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div
-    class="bg-cover mb-5"
-    style="height: 40vh; backgroundImage: url(./images/ImgAbout01.png)"
-  />
+  <BannerView />
   <div class="container mb-8">
     <h2 class="text-center mb-7">
       <span class="dot">

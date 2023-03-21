@@ -11,7 +11,7 @@ const productsStore = useProductsStore()
 const { getProducts } = productsStore
 const { productsGetter: products, paginationGetter: pagination } = storeToRefs(productsStore)
 
-const categories = ref(['全部', '花生糖', '炒花生'])
+const categories = ref(['全部', '花生糖', '焙炒花生'])
 const currentCategory = ref('全部')
 onMounted(() => {
   getProducts()
@@ -67,7 +67,7 @@ onMounted(() => {
             <div
               v-for="item in products"
               :key="item.id"
-              class="col-md-4 mb-4"
+              class="col-md-6 col-lg-4 mb-4"
             >
               <ProductCard :item="item" />
             </div>

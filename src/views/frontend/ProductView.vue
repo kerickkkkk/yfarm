@@ -32,7 +32,7 @@ onMounted(() => {
 <template>
   <BannerView />
 
-  <div class="container">
+  <div class="container mb-9">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -55,7 +55,7 @@ onMounted(() => {
       <div class="col-md-6 mb-3">
         <div class="slide__main">
           <div
-            class="bg-cover img-fluid"
+            class="bg-top img-fluid"
             :style="`background-image: url(${product.imageUrl})`"
             style="min-height: 350px"
           />
@@ -66,12 +66,10 @@ onMounted(() => {
           <h1 class="text-primary mb-3">
             {{ product.title }}
           </h1>
-          <p class="mb-4">
-            {{ product.description }}
-          </p>
-          <p class="mb-4">
-            付款方式： ATM 、 信用卡
-          </p>
+          <p
+            class="mb-4"
+            v-html="product.description"
+          />
           <div class="d-flex mb-4">
             <SelectCountComponent
               :qty="qty"

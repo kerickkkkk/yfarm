@@ -163,6 +163,10 @@ $utilities: map-merge(
     background-size: cover;
     background-position: center center;
 }
+.bg-top{
+    background-size: cover;
+    background-position: top center;
+}
   
 .img-cover{
     object-fit: center;

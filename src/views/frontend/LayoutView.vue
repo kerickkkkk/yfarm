@@ -133,11 +133,13 @@ onMounted(() => {
               </RouterLink>
             </li>
             <li class="nav-item">
-              <a
+              <RouterLink
+                to="/qa"
                 class="nav-link active p-5"
                 aria-current="page"
-                href="#"
-              >常見問題</a>
+              >
+                常見問題
+              </RouterLink>
             </li>
           </ul>
           <ul class="navbar-nav bg-md-primary text-center rounded-3">

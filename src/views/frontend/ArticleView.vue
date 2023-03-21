@@ -39,20 +39,20 @@ onMounted(() => {
         </li>
       </ol>
     </nav>
-    <section class="row">
+    <section class="row justify-content-center">
       <template v-if="article.title">
-        <div
-          class="card mb-4"
-        >
-          <div class="row g-1">
-            <div class="col-md-4">
+        <div class="col-md-6 col-lg-8">
+          <div
+            class="card border-0 mb-4"
+          >
+            <div>
               <img
                 :src="article.image"
                 class="img-fluid rounded-start"
                 :alt="article.title"
               >
             </div>
-            <div class="col-md-8">
+            <div>
               <div class="card-body">
                 <div class="d-flex flex-wrap">
                   <span

@@ -20,11 +20,24 @@ onMounted(() => {
 <template>
   <BannerView />
   <div class="container mb-8">
-    <h2 class="text-center mb-11">
-      <span class="dot">
-        最新消息
-      </span>
-    </h2>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <router-link
+            to="/"
+            class="nav-link active p-0"
+          >
+            首頁
+          </router-link>
+        </li>
+        <li
+          class="breadcrumb-item active"
+          aria-current="page"
+        >
+          最新消息
+        </li>
+      </ol>
+    </nav>
     <section class="row">
       <template v-if="articles.length > 0">
         <div

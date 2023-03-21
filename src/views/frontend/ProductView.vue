@@ -33,7 +33,25 @@ onMounted(() => {
   <BannerView />
 
   <div class="container">
-    <div class="row mb-3 p-5">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <router-link
+            to="/"
+            class="nav-link active p-0"
+          >
+            首頁
+          </router-link>
+        </li>
+        <li
+          class="breadcrumb-item active"
+          aria-current="page"
+        >
+          產品
+        </li>
+      </ol>
+    </nav>
+    <div class="row mb-3 pb-5">
       <div class="col-md-6 mb-3">
         <div class="slide__main">
           <div

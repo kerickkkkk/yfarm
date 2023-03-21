@@ -19,9 +19,24 @@ onMounted(async () => {
 <template>
   <BannerView />
   <div class="container">
-    <h2 class="text-center mb-11">
-      我的最愛
-    </h2>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <router-link
+            to="/"
+            class="nav-link active p-0"
+          >
+            首頁
+          </router-link>
+        </li>
+        <li
+          class="breadcrumb-item active"
+          aria-current="page"
+        >
+          我的最愛
+        </li>
+      </ol>
+    </nav>
     <div class="row">
       <template v-if="filterLikesProductsGetter.length > 0">
         <div class="row">

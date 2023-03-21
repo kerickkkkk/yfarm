@@ -37,6 +37,11 @@ const routes = [
         component: () => import('../views/frontend/ArticleView.vue')
       },
       {
+        path: 'aboutus',
+        name: 'AboutUs',
+        component: () => import('../views/frontend/AboutusView.vue')
+      },
+      {
         path: 'qa',
         name: 'Qa',
         component: () => import('../views/frontend/QaView.vue')

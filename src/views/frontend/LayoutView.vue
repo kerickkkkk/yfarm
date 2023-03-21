@@ -81,7 +81,17 @@ onMounted(() => {
                 產品
               </RouterLink>
             </li>
-            <li class="nav-item dropdown rounded-5">
+            <li class="nav-item">
+              <RouterLink
+                to="/aboutus"
+                class="nav-link p-5"
+                aria-current="page"
+              >
+                關於我們
+              </RouterLink>
+            </li>
+            <!-- 先做單頁面 -->
+            <!-- <li class="nav-item dropdown rounded-5">
               <button
                 id="navbarDropdown"
                 class="dropdown-toggle bg-transparent border-0 w-100 p-5"
@@ -122,11 +132,11 @@ onMounted(() => {
                   >產品成分</a>
                 </li>
               </ul>
-            </li>
+            </li> -->
             <li class="nav-item">
               <RouterLink
                 to="/articles"
-                class="nav-link active p-5"
+                class="nav-link p-5"
                 aria-current="page"
               >
                 最新消息
@@ -135,7 +145,7 @@ onMounted(() => {
             <li class="nav-item">
               <RouterLink
                 to="/qa"
-                class="nav-link active p-5"
+                class="nav-link p-5"
                 aria-current="page"
               >
                 常見問題

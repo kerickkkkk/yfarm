@@ -46,13 +46,13 @@ onMounted(() => {
           class="col-md-6 col-lg-6"
         >
           <div
-            class="card mb-4"
+            class="card border-0 mb-4"
           >
             <div class="row g-1">
               <div class="col-md-4">
                 <img
                   :src="article.image"
-                  class="img-fluid rounded-start"
+                  class="img-fluid rounded-start h-100"
                   :alt="article.title"
                 >
               </div>

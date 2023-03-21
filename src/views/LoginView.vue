@@ -29,9 +29,20 @@ const submitHandler = () => {
 </script>
 
 <template>
-  <div class="d-flex justify-content-center align-items-center vh-100">
-    <form class="bg-light p-4">
+  <div
+    class="d-flex justify-content-center align-items-center vh-100 bg-cover"
+    style="background-image: url(https://storage.googleapis.com/vue-course-api.appspot.com/vue3/1679408620153.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=UfV7XGE9dwbzfDKlaraKFCNdBCu1eRCqMeY2uMoWuCm5Wsr3dC3T%2BKYyNdtVgPBRSy1j%2FI%2B12dhfOhJ00U2Qha3NLlZolefgPlWQNGT4dlM6Da4GlvrN5smHGkF2yI1vhNOQ2fwLJdzDXr3lliJO5hjTwXox39aijm6qNMFdSIwtttCEALYkxwo0c%2BgBTKuB6%2Blup6P7efhl2Om1bojxAxksPzq4T5TemqKcwLHDr7SeCeAfE5MXLjlpvFzVEvLtDk8Gxv5ipu802OKOYxWTTs2HSXDemT0jDuQoabGdJ%2BlISfeSsHMOtgFaTY0Z42L22wx8Y0yEXHkU3fa%2BKUNMqg%3D%3D)"
+  >
+    <form class="bg-transparent p-6">
       <div class="mb-3">
+        <div>
+          <img
+            class="mx-auto d-block"
+            width="110"
+            src="/logo.png"
+            alt="logo"
+          >
+        </div>
         <label
           for="username"
           class="form-label"
@@ -48,7 +59,7 @@ const submitHandler = () => {
         <label
           for="password"
           class="form-label"
-        >Password</label>
+        >密碼</label>
         <input
           id="password"
           v-model="password"

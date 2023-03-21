@@ -54,6 +54,7 @@ const submitOrder = () => {
     .then((response) => {
       if (response.data.success) {
         resetUser()
+        getCarts()
         router.push('/finish')
       }
     })

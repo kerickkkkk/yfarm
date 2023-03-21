@@ -1,3 +1,12 @@
+<script setup>
+import { ref, inject } from 'vue'
+const swal = inject('$swal')
+const subscribeEmail = ref('')
+const subcribe = () => {
+  swal('感謝訂閱')
+  subscribeEmail.value = ''
+}
+</script>
 <template>
   <footer
     class="rounded-top-5 bg-cover py-10 mt-12"
@@ -21,11 +30,17 @@
             <div class="position-relative mb-">
               <input
                 id="email"
+                v-model.trim="subscribeEmail"
                 type="email"
                 class="form-control py-4"
                 placeholder="name@example.com"
               >
-              <button class="position-absolute end-0 top-50 translate-middle-y me-3 btn btn-sm btn-primary">
+              <button
+                :disabled="subscribeEmail===''"
+                type="butoon"
+                class="position-absolute end-0 top-50 translate-middle-y me-3 btn btn-sm btn-primary"
+                @click="subcribe"
+              >
                 立即訂購
               </button>
             </div>

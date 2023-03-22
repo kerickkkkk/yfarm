@@ -109,7 +109,19 @@ const routes = [
         component: () => import('../views/dashboard/DashboardArticles.vue')
       }
     ]
+  },
+  // 404 頁面
+  {
+    path: '/:pathMatch(.*)*',
+    component: () => import('@/views/NotFound.vue')
   }
+  // // new-page 以下都要 重新導向 參考
+  // {
+  //   path: '/new-page/:pathMatch(.*)*',
+  //   redirect: {
+  //     name: 'Home'
+  //   }
+  // }
 ]
 
 const router = createRouter({

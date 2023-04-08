@@ -36,13 +36,14 @@ onMounted(() => {
         spaceBetween: 30,
       },
     }"
-    class="container position-relative rounded-5 rounded-top-0"
+    class="container position-relative rounded-5 rounded-top-0 pb-7"
   >
     <SwiperSlide
       v-for="item in props.items"
       :key="item"
+      class="background-transparent h-100"
     >
-      <div class="w-100">
+      <div class="w-100 h-100">
         <ProductCard
           :item="item"
         />
@@ -50,7 +51,9 @@ onMounted(() => {
     </SwiperSlide>
   </Swiper>
   <div v-else>
-    沒有資料
+    <h5 class="h4 text-center">
+      所有產品已加入選擇，或無產品資料。
+    </h5>
   </div>
 </template>
 <style lang="scss">

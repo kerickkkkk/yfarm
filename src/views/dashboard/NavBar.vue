@@ -88,6 +88,16 @@ const logout = () => {
             </RouterLink>
           </li>
           <li class="nav-item">
+            <RouterLink
+              :class="{ active : currentRouteName === 'DashboardCoupons'}"
+              class="nav-link"
+              aria-current="page"
+              to="/admin/coupons"
+            >
+              優惠券
+            </RouterLink>
+          </li>
+          <li class="nav-item">
             <a
               class="nav-link"
               aria-current="page"

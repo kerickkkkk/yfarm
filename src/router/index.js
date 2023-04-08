@@ -107,6 +107,11 @@ const routes = [
         path: 'articles',
         name: 'DashboardArticles',
         component: () => import('../views/dashboard/DashboardArticles.vue')
+      },
+      {
+        path: 'coupons',
+        name: 'DashboardCoupons',
+        component: () => import('../views/dashboard/DashboardCoupons.vue')
       }
     ]
   },

@@ -1,17 +1,29 @@
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useCartsStore } from '@/stores/cartsStore'
 import { storeToRefs } from 'pinia'
 import { useLikesStore } from '@/stores/likesStore.js'
 import FooterView from './components/FooterView.vue'
+import Offcanvas from 'bootstrap/js/dist/offcanvas'
 
 const cartsStore = useCartsStore()
 const likesStore = useLikesStore()
+const offcanvas = ref(null)
 const { getCarts } = cartsStore
 const { getLikes } = likesStore
 const { cartsGetter } = storeToRefs(cartsStore)
 const { likesGetter } = storeToRefs(likesStore)
+const offcanvasShow = () => {
+  offcanvas.value.show()
+}
+const offcanvasHide = () => {
+  offcanvas.value.hide()
+}
 onMounted(() => {
+  offcanvas.value = new Offcanvas('#offcanvas', {
+    // 避免連點的時候 有 Uncaught RangeError: Maximum call stack size exceeded.
+    focus: false
+  })
   getCarts()
   getLikes()
 })
@@ -37,25 +49,22 @@ onMounted(() => {
       <button
         class="navbar-toggler ms-auto bg-primary rounded-0"
         type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasExample"
-        aria-controls="offcanvasExample"
         style="transform: translateX(12px);line-height: 50px; width: 60px "
+        @click="offcanvasShow"
       >
         <span class="navbar-toggler-icon" />
       </button>
       <div
-        id="offcanvasExample"
+        id="offcanvas"
         class="offcanvas offcanvas-start bg-light w-100"
         tabindex="-1"
-        aria-labelledby="offcanvasExampleLabel"
+        aria-labelledby="offcanvasLabel"
       >
         <div class="offcanvas-header">
           <button
             type="button"
             class="btn-close p-4 fs-1 text-white bg-primary ms-auto rounded-circle opacity-100"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
+            @click="offcanvasHide"
           />
         </div>
         <div class="offcanvas-body">
@@ -77,6 +86,7 @@ onMounted(() => {
                 class="nav-link p-5"
                 aria-current="page"
                 to="/products"
+                @click="offcanvasHide"
               >
                 產品
               </RouterLink>
@@ -86,6 +96,7 @@ onMounted(() => {
                 to="/aboutus"
                 class="nav-link p-5"
                 aria-current="page"
+                @click="offcanvasHide"
               >
                 關於我們
               </RouterLink>
@@ -138,6 +149,7 @@ onMounted(() => {
                 to="/articles"
                 class="nav-link p-5"
                 aria-current="page"
+                @click="offcanvasHide"
               >
                 最新消息
               </RouterLink>
@@ -147,6 +159,7 @@ onMounted(() => {
                 to="/qa"
                 class="nav-link p-5"
                 aria-current="page"
+                @click="offcanvasHide"
               >
                 常見問題
               </RouterLink>
@@ -158,6 +171,7 @@ onMounted(() => {
                 class="text-md-white nav-link py-5 px-md-4 position-relative"
                 aria-current="page"
                 to="/cart"
+                @click="offcanvasHide"
               >
                 <div class="position-md-relative">
                   <i class="bi bi-cart-fill" />
@@ -172,8 +186,12 @@ onMounted(() => {
                 class="nav-link px-md-4 py-5 position-relative"
                 aria-current="page"
                 to="/likes"
+                @click="offcanvasHide"
               >
-                <div class="position-md-relative">
+                <div
+                  class="position-md-relative"
+                  @click="offcanvasHide"
+                >
                   <i class="bi bi-heart-fill" />
                   <div class="position-absolute top-md-0 top-50 fs-md-6 end-md-auto end-0 start-md-100 rounded-circle text-white py-md-0 py-1 px-2 bg-secondary translate-middle-md translate-middle-y">
                     {{ likesGetter.length }}
@@ -186,6 +204,7 @@ onMounted(() => {
                 to="/login"
                 class="nav-link px-md-4 py-5"
                 aria-current="page"
+                @click="offcanvasHide"
               >
                 <i class="bi bi-person-fill" />
               </RouterLink>

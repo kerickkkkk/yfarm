@@ -1,15 +1,21 @@
 <script setup>
 import { ref, inject } from 'vue'
 const swal = inject('$swal')
-const subscribeEmail = ref('')
-const subcribe = () => {
-  swal('感謝訂閱')
-  subscribeEmail.value = ''
+const subscribeEmail = ref('1@1.cc')
+const email = ref(null)
+const subcribe = (values, actions) => {
+  // 無法解決 focus 問題
+  swal({
+    title: '感謝訂閱',
+    focusCancel: false
+  })
+  actions.resetForm()
+  document.focus()
 }
 </script>
 <template>
   <footer
-    class="rounded-top-5 bg-cover py-10 mt-12"
+    class="rounded-top-5 bg-cover py-10 mt-6 mt-md-12"
     style="backgroundImage: linear-gradient(to right, rgba(169, 193, 0 , 0.9), rgba(169, 193, 0, 0.9)), url(./images/ImgFooter.jpg)"
   >
     <div class="container text-white">
@@ -28,21 +34,41 @@ const subcribe = () => {
               class="form-label"
             >關於農場的最新優惠，施作趣聞，不漏接</label>
             <div class="position-relative mb-">
-              <input
+              <VForm
+                v-slot="{ errors }"
+                @submit="subcribe"
+              >
+                <div class="mb-3">
+                  <VField
+                    id="email"
+                    ref="email"
+                    v-model="subscribeEmail"
+                    name="email"
+                    type="email"
+                    class="form-control py-4"
+                    :class="{ 'is-invalid': errors['email'] }"
+                    placeholder="請輸入 Email"
+                    rules="email|required"
+                  />
+                  <button
+                    type="submit"
+                    class="position-absolute end-0 top-50 translate-middle-y me-3 btn btn-sm btn-primary"
+                  >
+                    立即訂購
+                  </button>
+                  <error-message
+                    name="email"
+                    class="invalid-feedback"
+                  />
+                </div>
+              </VForm>
+              <!-- <input
                 id="email"
                 v-model.trim="subscribeEmail"
                 type="email"
                 class="form-control py-4"
                 placeholder="name@example.com"
-              >
-              <button
-                :disabled="subscribeEmail===''"
-                type="butoon"
-                class="position-absolute end-0 top-50 translate-middle-y me-3 btn btn-sm btn-primary"
-                @click="subcribe"
-              >
-                立即訂購
-              </button>
+              > -->
             </div>
           </div>
           <div class="fs-7">
@@ -102,3 +128,11 @@ const subcribe = () => {
     </div>
   </footer>
 </template>
+<style lang="scss" scoped>
+.was-validated .form-control:invalid, .form-control.is-invalid {
+    background-position: right calc(0.375em + 5.5rem) center;
+}
+.is-invalid + .btn{
+  margin-top: -0.75rem;
+}
+</style>

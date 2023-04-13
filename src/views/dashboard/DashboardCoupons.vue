@@ -34,6 +34,7 @@ onMounted(() => {
   getCoupons()
 })
 </script>
+
 <template>
   <section>
     <div class="container">

@@ -5,6 +5,7 @@ import BannerView from './components/BannerView.vue'
 const route = useRoute()
 const step = route.meta.step
 </script>
+
 <template>
   <BannerView />
   <div class="container">
@@ -39,6 +40,3 @@ const step = route.meta.step
     </div>
   </div>
 </template>
-<style lang="scss">
-
-</style>

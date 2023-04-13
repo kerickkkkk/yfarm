@@ -65,6 +65,7 @@ onMounted(() => {
 })
 
 </script>
+
 <template>
   <BannerView />
   <div class="container">
@@ -275,6 +276,3 @@ onMounted(() => {
     </div>
   </div>
 </template>
-<style lang="scss">
-
-</style>

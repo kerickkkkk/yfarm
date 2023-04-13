@@ -2,6 +2,7 @@
 import BannerView from './components/BannerView.vue'
 
 </script>
+
 <template>
   <BannerView />
   <div class="container">
@@ -61,6 +62,3 @@ import BannerView from './components/BannerView.vue'
     </div>
   </div>
 </template>
-<style lang="scss">
-
-</style>

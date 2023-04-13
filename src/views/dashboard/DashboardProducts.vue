@@ -55,10 +55,7 @@ const getProducts = (page = 1) => {
     })
     .finally(() => setLoading(false))
 }
-// 更改從一開始就根據寫入狀態直接給物件
-// const getProduct = (id) => {
-//   tempProduct.value = products.value.find((item) => item.id === id);
-// };
+
 const openUploadModal = () => {
   uploadImageRef.value.show()
 }
@@ -77,59 +74,17 @@ const openModalHandler = (type, product) => {
     swal('錯誤')
   }
 }
-// 保留比較 Modal 拆分前比較用
-// const addEditProduct = (id) => {
-//   const method = modalType.value === "new" ? "post" : "put";
-//   const url =
-//     modalType.value === "new"
-//       ? `${baseUrl}/api/${apiPath}/admin/product`
-//       : `${baseUrl}/api/${apiPath}/admin/product/${id}`;
-//   const data = { data: tempProduct.value };
-//   setLoading(true);
-//   axios({
-//     method,
-//     url,
-//     data,
-//   })
-//     .then(({ data }) => {
-//       if (data.success) {
-//         setLoading(false);
-//         swal(data.message);
-//         resetProduct();
-//         getProducts();
-//         productModal.value.hide();
-//       }
-//     })
-//     .catch((error) => {
-//       console.dir(error);
-//       setLoading(false);
-//       // 在確認沒有權限的寫法
-//     });
-// };
 
 const resetProduct = () => {
   tempProduct.value = { ...productObj }
 }
-// const addImagesUrl = () => {
-//   if (tempProduct.value.imagesUrl) {
-//     tempProduct.value.imagesUrl.push(imagesUrl.value);
-//   } else {
-//     tempProduct.value.imagesUrl = [imagesUrl.value];
-//   }
-//   imagesUrl.value = "";
-// };
-// const delImagesUrl = (index) => {
-//   tempProduct.value.imagesUrl.splice(index, 1);
-// };
+
 onMounted(() => {
   // 從 cookie 取出
   const token = document.cookie
     .split('; ')
     .find((row) => row.startsWith('ttShopToken='))
     ?.split('=')[1]
-  // 預先載入
-  // productModal.value = new Modal(productModalDom.value);
-  // delProductModal.value = new Modal(delProductModalDom.value);
   axios.defaults.headers.common.Authorization = token
   getProducts()
 })
@@ -225,7 +180,6 @@ onMounted(() => {
     </div>
   </div>
   <!-- Modal -->
-  <!-- 新增 修改 保留對照刪除前後-->
   <AddEditProductModal
     ref="addEditProductRef"
     @get-products="getProducts"

@@ -17,6 +17,7 @@ onMounted(() => {
   getAritcles()
 })
 </script>
+
 <template>
   <BannerView />
   <div class="container mb-8">
@@ -103,6 +104,3 @@ onMounted(() => {
     />
   </div>
 </template>
-<style lang="scss">
-
-</style>

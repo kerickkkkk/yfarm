@@ -178,6 +178,7 @@ onMounted(() => {
     </div>
   </section>
 </template>
+
 <style  lang="scss" scoped>
 @import "bootstrap/scss/functions";
 @import "@/assets/scss/helpers/variables";

@@ -72,6 +72,7 @@ onMounted(() => {
 })
 defineExpose({ show, hide })
 </script>
+
 <template>
   <div
     id="modal"

@@ -85,6 +85,7 @@ onMounted(() => {
 // 開放方法使用
 defineExpose({ show })
 </script>
+
 <template>
   <div
     id="productModal"
@@ -341,6 +342,7 @@ defineExpose({ show })
     </div>
   </div>
 </template>
+
 <style lang="scss" scoped>
 img {
   object-fit: contain;

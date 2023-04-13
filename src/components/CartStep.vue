@@ -8,6 +8,7 @@ const props = defineProps({
   }
 })
 </script>
+
 <template>
   <div class="row py-5 g-0">
     <div class="col-md-4 mb-2">

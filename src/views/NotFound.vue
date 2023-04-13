@@ -20,6 +20,7 @@ onUnmounted(() => {
   clearInterval(timer)
 })
 </script>
+
 <template>
   <div class="vh-100 bg-light d-flex justify-content-center align-items-center">
     <div class="text-center">

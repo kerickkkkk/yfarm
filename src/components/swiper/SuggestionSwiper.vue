@@ -23,6 +23,7 @@ onMounted(() => {
 
 })
 </script>
+
 <template>
   <Swiper
     v-if="items.length > 0"
@@ -56,6 +57,3 @@ onMounted(() => {
     </h5>
   </div>
 </template>
-<style lang="scss">
-
-</style>

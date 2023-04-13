@@ -18,6 +18,7 @@ onMounted(() => {
   getAritcle(id)
 })
 </script>
+
 <template>
   <BannerView />
   <div class="container mb-8">
@@ -90,6 +91,3 @@ onMounted(() => {
     </section>
   </div>
 </template>
-<style lang="scss">
-
-</style>

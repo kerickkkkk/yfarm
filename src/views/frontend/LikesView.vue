@@ -16,6 +16,7 @@ onMounted(async () => {
   getLikes()
 })
 </script>
+
 <template>
   <BannerView />
   <div class="container">
@@ -69,6 +70,3 @@ onMounted(async () => {
     </div>
   </div>
 </template>
-<style lang="scss">
-
-</style>

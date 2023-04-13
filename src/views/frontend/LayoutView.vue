@@ -101,49 +101,6 @@ onMounted(() => {
                 關於我們
               </RouterLink>
             </li>
-            <!-- 先做單頁面 -->
-            <!-- <li class="nav-item dropdown rounded-5">
-              <button
-                id="navbarDropdown"
-                class="dropdown-toggle bg-transparent border-0 w-100 p-5"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
-                aria-expanded="false"
-                aria-controls="collapseOne"
-              >
-                關於我們
-              </button>
-              <ul
-                id="collapseOne"
-                class="dropdown-menu collapse text-center"
-              >
-                <li>
-                  <a
-                    class="dropdown-item py-md-2 py-5"
-                    href="#"
-                  >關於我們</a>
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item py-md-2 py-5"
-                    href="#"
-                  >農村紀錄</a>
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item py-md-2 py-5"
-                    href="#"
-                  >送驗紀錄</a>
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item py-md-2 py-5"
-                    href="#"
-                  >產品成分</a>
-                </li>
-              </ul>
-            </li> -->
             <li class="nav-item">
               <RouterLink
                 to="/articles"

@@ -29,6 +29,7 @@ onMounted(() => {
 })
 
 </script>
+
 <template>
   <BannerView />
 
@@ -134,6 +135,7 @@ onMounted(() => {
     </div>
   </div>
 </template>
+
 <style lang="scss" scoped>
 @import "bootstrap/scss/functions";
 @import "@/assets/scss/helpers/variables";

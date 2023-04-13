@@ -20,5 +20,3 @@ const isLoading = computed(() => getIsLoading.value)
   />
   <RouterView />
 </template>
-
-<style scoped></style>

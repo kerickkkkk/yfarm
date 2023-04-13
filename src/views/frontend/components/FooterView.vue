@@ -13,6 +13,7 @@ const subcribe = (values, actions) => {
   document.focus()
 }
 </script>
+
 <template>
   <footer
     class="rounded-top-5 bg-cover py-10 mt-6 mt-md-12"
@@ -128,6 +129,7 @@ const subcribe = (values, actions) => {
     </div>
   </footer>
 </template>
+
 <style lang="scss" scoped>
 .was-validated .form-control:invalid, .form-control.is-invalid {
     background-position: right calc(0.375em + 5.5rem) center;

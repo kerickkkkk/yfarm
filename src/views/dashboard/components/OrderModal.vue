@@ -28,6 +28,7 @@ onMounted(() => {
 // 開放方法使用
 defineExpose({ show })
 </script>
+
 <template>
   <div
     id="modal"

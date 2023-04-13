@@ -37,12 +37,12 @@ onMounted(() => {
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <router-link
+          <RouterLink
             to="/"
             class="nav-link active p-0"
           >
             首頁
-          </router-link>
+          </RouterLink>
         </li>
         <li
           class="breadcrumb-item active"

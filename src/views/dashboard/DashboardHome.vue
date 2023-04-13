@@ -14,8 +14,6 @@ const checkLogin = () => {
       if (!data.success) {
         swal('', `${data.message || '請重新登入'}`, 'error')
         router.push('/login')
-      } else {
-        swal('登入成功')
       }
     })
     .catch((error) => {

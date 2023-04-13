@@ -2,7 +2,6 @@
 import { computed, inject } from 'vue'
 import { useRoute, useRouter, RouterLink, RouterView } from 'vue-router'
 import { logoutApi } from '@/api/dashboard/user.js'
-import { deleteCookie } from '@/utils/tools.js'
 
 const route = useRoute()
 const router = useRouter()
@@ -14,7 +13,7 @@ const logout = () => {
     .then((response) => {
       if (response.data.success) {
         swal(response.data.message)
-        deleteCookie()
+        document.cookie = `ttShopToken=;expires=${new Date()}`
         router.push('/login')
       } else {
         swal('有錯誤')

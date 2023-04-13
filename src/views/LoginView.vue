@@ -20,6 +20,7 @@ const submitHandler = () => {
   }).then(({ data }) => {
     const { token, expired } = data
     document.cookie = `ttShopToken=${token}; expires=${new Date(expired)};`
+    swal('登入成功')
     router.push('/admin')
   })
     .catch((error) => {
@@ -33,7 +34,10 @@ const submitHandler = () => {
     class="d-flex justify-content-center align-items-center vh-100 bg-cover"
     style="background-image: url(https://storage.googleapis.com/vue-course-api.appspot.com/vue3/1679408620153.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=UfV7XGE9dwbzfDKlaraKFCNdBCu1eRCqMeY2uMoWuCm5Wsr3dC3T%2BKYyNdtVgPBRSy1j%2FI%2B12dhfOhJ00U2Qha3NLlZolefgPlWQNGT4dlM6Da4GlvrN5smHGkF2yI1vhNOQ2fwLJdzDXr3lliJO5hjTwXox39aijm6qNMFdSIwtttCEALYkxwo0c%2BgBTKuB6%2Blup6P7efhl2Om1bojxAxksPzq4T5TemqKcwLHDr7SeCeAfE5MXLjlpvFzVEvLtDk8Gxv5ipu802OKOYxWTTs2HSXDemT0jDuQoabGdJ%2BlISfeSsHMOtgFaTY0Z42L22wx8Y0yEXHkU3fa%2BKUNMqg%3D%3D)"
   >
-    <form class="bg-transparent p-6">
+    <VForm
+      v-slot="{ errors }"
+      @submit="submitHandler"
+    >
       <div class="mb-3">
         <div>
           <img
@@ -43,37 +47,60 @@ const submitHandler = () => {
             alt="logo"
           >
         </div>
-        <label
-          for="username"
-          class="form-label"
-        >信箱</label>
-        <input
-          id="username"
-          v-model="username"
-          type="email"
-          class="form-control"
-          aria-describedby="emailHelp"
-        >
+        <div class="mb-3">
+          <label
+            for="email"
+            class="form-label"
+          >
+            <span class="text-danger">*</span>
+            Email
+          </label>
+          <VField
+            id="email"
+            v-model="username"
+            name="email"
+            type="email"
+            class="form-control"
+            :class="{ 'is-invalid': errors['email'] }"
+            placeholder="請輸入 Email"
+            rules="email|required"
+          />
+          <error-message
+            name="email"
+            class="invalid-feedback"
+          />
+        </div>
       </div>
       <div class="mb-3">
         <label
           for="password"
           class="form-label"
-        >密碼</label>
-        <input
+        >
+          <span class="text-danger">*</span>
+          密碼
+        </label>
+        <VField
           id="password"
           v-model="password"
+          name="密碼"
           type="password"
           class="form-control"
-        >
+          :class="{ 'is-invalid': errors['密碼'] }"
+          placeholder="請輸入 密碼"
+          rules="required"
+        />
+        <error-message
+          v-model="password"
+          name="密碼"
+          class="invalid-feedback"
+        />
       </div>
       <button
         type="submit"
         class="btn btn-primary"
-        @click="submitHandler"
       >
         送出
       </button>
-    </form>
+    </VForm>
   </div>
 </template>

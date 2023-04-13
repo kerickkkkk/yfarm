@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, inject } from 'vue'
 import Modal from 'bootstrap/js/dist/modal'
-import noImage from '@/assets/noImage.png'
+import noImage from '@/assets/scss/noImage.png'
 import { getArticleApi, postArticleApi, putArticleApi } from '@/api/dashboard/articles.js'
 
 const swal = inject('$swal')

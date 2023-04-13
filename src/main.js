@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 
 import router from './router'
 import pinia from './stores/index'
-import '@/scss/all.scss'
+import '@/assets/scss/all.scss'
 import 'bootstrap'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import VueSweetAlert from 'vue-sweetalert2'

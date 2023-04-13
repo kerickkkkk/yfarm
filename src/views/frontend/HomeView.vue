@@ -180,7 +180,7 @@ onMounted(() => {
 </template>
 <style  lang="scss" scoped>
 @import "bootstrap/scss/functions";
-@import "@/scss/helpers/variables";
+@import "@/assets/scss/helpers/variables";
 .swiper {
   width: 100%;
   height: 100%;

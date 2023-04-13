@@ -98,7 +98,7 @@ onMounted(() => {
 </template>
 <style lang="scss" scoped>
 @import "bootstrap/scss/functions";
-@import "@/scss/helpers/variables";
+@import "@/assets/scss/helpers/variables";
 
 :deep(.swiper-pagination-bullet) {
   width : calc(100vw * 72 / 1320);

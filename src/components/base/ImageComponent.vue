@@ -19,7 +19,7 @@ const onImageError = () => {
   tempUrl.value = '/logo.png'
 }
 const onImageLoad = () => {
-  // console.log('loadinng')
+
 }
 onMounted(() => {
 

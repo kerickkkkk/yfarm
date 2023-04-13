@@ -83,7 +83,7 @@ const requestErrorHandler = (error) => {
   const { setLoading } = statusStore
   setLoading(false)
   // do something with request error
-  console.log(error) // for debug
+  // console.log(error) // for debug
   return Promise.reject(error)
 }
 
@@ -149,7 +149,7 @@ const responseErrorHandler = (error) => {
   const statusStore = useStatusStore()
   const { setLoading } = statusStore
   setLoading(false)
-  console.log('err' + error) // for debug
+  // console.log('err' + error) // for debug
   // do something
 
   // 集中處理錯誤 目前都是相同回饋，下游只要接就好了

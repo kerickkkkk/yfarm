@@ -27,7 +27,6 @@ const getCoupons = () => {
 }
 const openDeleteModal = (type, coupon) => {
   deleteModal.value.show(type, coupon)
-  console.log('delete')
 }
 
 onMounted(() => {

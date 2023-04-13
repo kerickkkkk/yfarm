@@ -56,16 +56,6 @@ export const useUploadImagesStore = defineStore('uploadImages', {
       }
       const url = `/admin/product/${data.id}`
       setLoading(true)
-      // 指向有問題
-      // service({
-      //   method: "put",
-      //   url,
-      //   data: { data },
-      // })
-      //   .then((response) => {
-      //     console.log(response);
-      //   })
-      //   .catch((error) => Swal('', error?.response?.data?.message || '有錯誤', 'error'));
       try {
         const { data: result } = await service({
           method: 'put',

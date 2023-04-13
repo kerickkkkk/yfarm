@@ -24,6 +24,14 @@ const goCheckoutHandler = () => {
   }
   router.push('/checkout')
 }
+const handleValue = (cart, e, type) => {
+  const currentQty = e.target.value <= 0 ? 1 : e.target.value
+  cart.qty = currentQty
+  e.target.value = currentQty
+  if (type === 'change') {
+    updateCart(cart.id, cart.product.id, currentQty)
+  }
+}
 onMounted(() => {
   getCarts()
 })
@@ -110,12 +118,13 @@ onMounted(() => {
                   </button>
 
                   <input
-                    v-model="cart.qty"
+                    :value="cart.qty"
                     type="number"
                     min="1"
                     class="form-control rounded-0"
                     style="width: 80px"
-                    @change="updateCart(cart.id, cart.product.id, cart.qty)"
+                    @input="handleValue(cart, $event)"
+                    @change="handleValue(cart, $event, 'change')"
                   >
 
                   <button

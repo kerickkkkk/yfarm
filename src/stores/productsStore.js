@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { getProductsApi, getProductApi } from '@/api/products.js'
+import Swal from 'sweetalert2'
 export const useProductsStore = defineStore('products', {
   state: () => ({
     products: [],
@@ -21,7 +22,9 @@ export const useProductsStore = defineStore('products', {
         const { data } = await getProductsApi(page, category)
         this.products = data.products
         this.pagination = data.pagination
-      } catch (error) {}
+      } catch (error) {
+        Swal('', error?.response?.data?.message || '有錯誤', 'error')
+      }
     },
     async getProduct (id) {
       try {
@@ -31,7 +34,9 @@ export const useProductsStore = defineStore('products', {
           const { data } = await getProductApi(id)
           this.product = data.product
         }
-      } catch (error) {}
+      } catch (error) {
+        Swal('', error?.response?.data?.message || '有錯誤', 'error')
+      }
     }
   }
 })

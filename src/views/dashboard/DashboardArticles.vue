@@ -15,7 +15,9 @@ const getArticles = (page = 1) => {
       articles.value = response.data.articles || []
       pagination.value = response.data.pagination || {}
     })
-    .catch()
+    .catch((error) => {
+      swal('', error?.response?.data?.message || '有錯誤', 'error')
+    })
 }
 const deleteArticle = (id) => {
   deleteArticleApi(id)
@@ -23,7 +25,9 @@ const deleteArticle = (id) => {
       swal(`文章：${id}，${data.message} `)
       getArticles()
     })
-    .catch()
+    .catch((error) => {
+      swal('', error?.response?.data?.message || '有錯誤', 'error')
+    })
 }
 
 const openModal = (isNew, tempArticle) => {

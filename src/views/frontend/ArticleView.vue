@@ -1,17 +1,19 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, inject } from 'vue'
 import { useRoute } from 'vue-router'
 import { getArticleApi } from '@/api/articles.js'
 import BannerView from './components/BannerView.vue'
 const route = useRoute()
-
+const swal = inject('$swal')
 const article = ref([])
 const getAritcle = (id) => {
   getArticleApi(id)
     .then(({ data }) => {
       article.value = data.article
     })
-    .catch()
+    .catch((error) => {
+      swal('', error?.response?.data?.message || '有錯誤', 'error')
+    })
 }
 onMounted(() => {
   const { id } = route.params

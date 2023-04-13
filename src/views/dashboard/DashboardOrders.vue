@@ -15,7 +15,9 @@ const getOrders = (page = 1) => {
       orders.value = data.orders
       pagination.value = data.pagination
     })
-    .catch()
+    .catch((error) => {
+      swal('', error?.response?.data?.message || '有錯誤', 'error')
+    })
 }
 const putOrder = (order, e) => {
   // 如果是 checked 要用 checked 不然會找不到值
@@ -25,7 +27,9 @@ const putOrder = (order, e) => {
       swal(`${data.message}，訂單號碼：${order.id}`)
       getOrders()
     })
-    .catch()
+    .catch((error) => {
+      swal('', error?.response?.data?.message || '有錯誤', 'error')
+    })
 }
 const deleteOrder = (id) => {
   deleteOrderApi(id)
@@ -33,7 +37,9 @@ const deleteOrder = (id) => {
       swal(`訂單：${id}，${data.message} `)
       getOrders()
     })
-    .catch()
+    .catch((error) => {
+      swal('', error?.response?.data?.message || '有錯誤', 'error')
+    })
 }
 const openModal = (order) => {
   orderModel.value.show(order)

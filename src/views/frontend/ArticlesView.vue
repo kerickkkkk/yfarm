@@ -1,8 +1,9 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, inject } from 'vue'
 import { getArticlesApi } from '@/api/articles.js'
 import Pagination from '../../components/base/PaginationComponent.vue'
 import BannerView from './components/BannerView.vue'
+const swal = inject('$swal')
 const articles = ref([])
 const pagination = ref({})
 const getAritcles = (page = 1) => {
@@ -11,7 +12,9 @@ const getAritcles = (page = 1) => {
       articles.value = data.articles
       pagination.value = data.pagination
     })
-    .catch()
+    .catch((error) => {
+      swal('', error?.response?.data?.message || '有錯誤', 'error')
+    })
 }
 onMounted(() => {
   getAritcles()

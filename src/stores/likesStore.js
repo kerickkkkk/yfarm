@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { getAllProductsApi } from '@/api/products.js'
+import Swal from 'sweetalert2'
 const projectName = import.meta.env.VITE_PROJECT_NAME
 export const useLikesStore = defineStore('likes', {
   state: () => ({
@@ -27,14 +28,14 @@ export const useLikesStore = defineStore('likes', {
         const { data } = await getAllProductsApi()
         this.products = data.products
       } catch (error) {
-
+        Swal('', error?.response?.data?.message || '有錯誤', 'error')
       }
     },
     async getLikes () {
       try {
         this.likes = JSON.parse(localStorage.getItem(projectName) || '[]')
       } catch (error) {
-
+        Swal('', error?.response?.data?.message || '有錯誤', 'error')
       }
     },
     async setLike (id) {
@@ -50,7 +51,7 @@ export const useLikesStore = defineStore('likes', {
         localStorage.setItem(projectName, JSON.stringify(this.likes))
         this.getLikes()
       } catch (error) {
-
+        Swal('', error?.response?.data?.message || '有錯誤', 'error')
       }
     }
   }

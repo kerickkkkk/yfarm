@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, inject } from 'vue'
 import { storeToRefs } from 'pinia'
 import { currency } from '@/utils/filters.js'
 import { useCartsStore } from '@/stores/cartsStore'
@@ -9,7 +9,7 @@ import { postOrderApi } from '@/api/orders.js'
 import BannerView from './components/BannerView.vue'
 const route = useRoute()
 const router = useRouter()
-
+const swal = inject('$swal')
 const cartsStore = useCartsStore()
 const { getCarts } = cartsStore
 const {
@@ -58,7 +58,9 @@ const submitOrder = () => {
         router.push('/finish')
       }
     })
-    .catch()
+    .catch((error) => {
+      swal('', error?.response?.data?.message || '有錯誤', 'error')
+    })
 }
 onMounted(() => {
   getCarts()

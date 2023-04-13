@@ -34,7 +34,7 @@ const delProduct = (id) => {
       }
     })
     .catch((error) => {
-      console.dir(error)
+      swal('', error?.response?.data?.message || '有錯誤', 'error')
       setLoading(false)
     })
 }

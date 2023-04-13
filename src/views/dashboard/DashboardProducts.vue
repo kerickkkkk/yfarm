@@ -49,7 +49,7 @@ const getProducts = (page = 1) => {
     })
     .catch((error) => {
       setLoading(false)
-      swal('', error?.response?.data?.message, 'error')
+      swal('', error?.response?.data?.message || '有錯誤', 'error')
       // 在確認沒有權限的寫法
       router.push({ name: 'Login' })
     })

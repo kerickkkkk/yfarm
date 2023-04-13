@@ -38,7 +38,9 @@ const putArticle = () => {
       emit('getArticles')
       hide()
     })
-    .catch()
+    .catch((error) => {
+      swal('', error?.response?.data?.message || '有錯誤', 'error')
+    })
 }
 
 const postArticle = () => {
@@ -55,7 +57,9 @@ const postArticle = () => {
       emit('getArticles')
       hide()
     })
-    .catch()
+    .catch((error) => {
+      swal('', error?.response?.data?.message || '有錯誤', 'error')
+    })
 }
 const articleHandler = () => {
   isNew.value ? postArticle() : putArticle()

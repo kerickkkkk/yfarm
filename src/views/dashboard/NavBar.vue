@@ -19,7 +19,9 @@ const logout = () => {
       } else {
         swal('有錯誤')
       }
-    }).catch()
+    }).catch((error) => {
+      swal('', error?.response?.data?.message || '有錯誤', 'error')
+    })
 }
 </script>
 

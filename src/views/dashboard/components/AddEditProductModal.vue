@@ -62,9 +62,15 @@ const addEditProduct = (id) => {
       }
     })
     .catch((error) => {
-      swal('', error?.response?.data?.message || '有錯誤', 'error')
+      console.log(error?.response?.data?.message)
+      let msg = error?.response?.data?.message
+      if (Array.isArray(error?.response?.data?.message)) {
+        msg = msg.join(',')
+      } else {
+        msg = msg.message
+      }
+      swal('', msg || '有錯誤', 'error')
       setLoading(false)
-      // 在確認沒有權限的寫法
     })
 }
 

@@ -104,7 +104,7 @@ defineExpose({ show, hide })
               >標題</label>
               <input
                 id="title"
-                v-model="tempCoupon.title"
+                v-model.trim="tempCoupon.title"
                 type="text"
                 class="form-control"
                 placeholder="請輸入標題"
@@ -117,7 +117,7 @@ defineExpose({ show, hide })
               >折扣碼</label>
               <input
                 id="code"
-                v-model="tempCoupon.code"
+                v-model.trim="tempCoupon.code"
                 type="text"
                 class="form-control"
                 placeholder="請輸入折扣碼"

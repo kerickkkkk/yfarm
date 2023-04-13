@@ -122,7 +122,7 @@ defineExpose({ show })
                   >輸入圖片網址</label>
                   <input
                     id="imageUrl"
-                    v-model="tempProduct.imageUrl"
+                    v-model.trim="tempProduct.imageUrl"
                     type="text"
                     class="form-control"
                     placeholder="請輸入圖片連結"
@@ -142,7 +142,7 @@ defineExpose({ show })
                   >輸入子圖片組</label>
                   <input
                     id="imagesUrl"
-                    v-model="imagesUrl"
+                    v-model.trim="imagesUrl"
                     type="text"
                     class="form-control"
                     placeholder="請輸入圖片連結"
@@ -188,7 +188,7 @@ defineExpose({ show })
                 >標題</label>
                 <input
                   id="title"
-                  v-model="tempProduct.title"
+                  v-model.trim="tempProduct.title"
                   type="text"
                   class="form-control"
                   placeholder="請輸入標題"
@@ -202,7 +202,7 @@ defineExpose({ show })
                   >分類</label>
                   <input
                     id="category"
-                    v-model="tempProduct.category"
+                    v-model.trim="tempProduct.category"
                     type="text"
                     class="form-control"
                     placeholder="請輸入分類"
@@ -231,7 +231,7 @@ defineExpose({ show })
                   >原價</label>
                   <input
                     id="origin_price"
-                    v-model="tempProduct.origin_price"
+                    v-model.number="tempProduct.origin_price"
                     type="number"
                     min="0"
                     class="form-control"
@@ -245,7 +245,7 @@ defineExpose({ show })
                   >售價</label>
                   <input
                     id="price"
-                    v-model="tempProduct.price"
+                    v-model.number="tempProduct.price"
                     type="number"
                     min="0"
                     class="form-control"

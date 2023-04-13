@@ -49,6 +49,7 @@ onMounted(() => {
     <div class="row">
       <div class="text-end">
         <button
+          v-if="carts.length>0"
           class="btn btn-sm btn-outline-danger"
           @click="deleteAllCarts"
         >

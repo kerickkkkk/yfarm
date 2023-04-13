@@ -1,179 +1,179 @@
 $utilities: map-merge(
-    $utilities,
-    (
-        "position":
-            map-merge(
-                map-get($utilities, "position"),
-                (
-                    responsive: true,
-                )
-            ),
-        "top":
-            map-merge(
-                map-get($utilities, "top"),
-                (
-                    responsive: true,
-                )
-            ),
-        "start":
-            map-merge(
-                map-get($utilities, "start"),
-                (
-                    responsive: true,
-                )
-            ),
-        "end":
-            map-merge(
-                map-get($utilities, "end"),
-                (
-                    responsive: true,
-                )
-            ),
-        "translate-middle":
-            map-merge(
-                map-get($utilities, "translate-middle"),
-                (
-                    responsive: true,
-                )
-            ),
-        "width":
-            map-merge(
-                map-get($utilities, "width"),
-                (
-                    responsive: true,
-                )
-            ),
-        "overflow":
-            map-merge(
-                map-get($utilities, "overflow"),
-                (
-                    responsive: true,
-                )
-            ),
-        "font-size":
-            map-merge(
-                map-get($utilities, "font-size"),
-                (
-                    responsive: true,
-                )
-            ),
-        "background-color":
-            map-merge(
-                map-get($utilities, "background-color"),
-                (
-                    responsive: true,
-                )
-            ),
-        "rounded": (
-            property: border-radius,
-            class: rounded,
-            values: (
-                null: var(--#{$prefix}border-radius),
-                0: 0,
-                1: var(--#{$prefix}border-radius-sm),
-                2: var(--#{$prefix}border-radius),
-                3: var(--#{$prefix}border-radius-lg),
-                4: var(--#{$prefix}border-radius-xl),
-                5: var(--#{$prefix}border-radius-2xl),
-                6: var(--#{$prefix}border-radius-3xl),
-                circle: 50%,
-                pill: var(--#{$prefix}border-radius-pill)
-            )
-            ),
-        "rounded-top": (
-            property: border-top-left-radius border-top-right-radius,
-            class: rounded-top,
-            values: (
-                null: var(--#{$prefix}border-radius),
-                0: 0,
-                1: var(--#{$prefix}border-radius-sm),
-                2: var(--#{$prefix}border-radius),
-                3: var(--#{$prefix}border-radius-lg),
-                4: var(--#{$prefix}border-radius-xl),
-                5: var(--#{$prefix}border-radius-2xl),
-                6: var(--#{$prefix}border-radius-3xl),
-                circle: 50%,
-                pill: var(--#{$prefix}border-radius-pill)
-            )
-            ),
-        "rounded-end": (
-            property: border-top-right-radius border-bottom-right-radius,
-            class: rounded-end,
-            values: (
-                null: var(--#{$prefix}border-radius),
-                0: 0,
-                1: var(--#{$prefix}border-radius-sm),
-                2: var(--#{$prefix}border-radius),
-                3: var(--#{$prefix}border-radius-lg),
-                4: var(--#{$prefix}border-radius-xl),
-                5: var(--#{$prefix}border-radius-2xl),
-                6: var(--#{$prefix}border-radius-3xl),
-                circle: 50%,
-                pill: var(--#{$prefix}border-radius-pill)
-            )
-            ),
-        "rounded-bottom": (
-            property: border-bottom-right-radius border-bottom-left-radius,
-            class: rounded-bottom,
-            values: (
-                null: var(--#{$prefix}border-radius),
-                0: 0,
-                1: var(--#{$prefix}border-radius-sm),
-                2: var(--#{$prefix}border-radius),
-                3: var(--#{$prefix}border-radius-lg),
-                4: var(--#{$prefix}border-radius-xl),
-                5: var(--#{$prefix}border-radius-2xl),
-                6: var(--#{$prefix}border-radius-3xl),
-                circle: 50%,
-                pill: var(--#{$prefix}border-radius-pill)
-            )
-            ),
-        "rounded-start": (
-            property: border-bottom-left-radius border-top-left-radius,
-            class: rounded-start,
-            values: (
-                null: var(--#{$prefix}border-radius),
-                0: 0,
-                1: var(--#{$prefix}border-radius-sm),
-                2: var(--#{$prefix}border-radius),
-                3: var(--#{$prefix}border-radius-lg),
-                4: var(--#{$prefix}border-radius-xl),
-                5: var(--#{$prefix}border-radius-2xl),
-                6: var(--#{$prefix}border-radius-3xl),
-                circle: 50%,
-                pill: var(--#{$prefix}border-radius-pill)
-            )
-            ),
-        "max-width": (
-                property: max-width,
-                class: mw,
-                responsive: true,
-                values: (
-                    100: 100%,
-                    auto: auto,
-                    inherit: inherit
-                )
-            ),
-    )
+  $utilities,
+  (
+    "position":
+      map-merge(
+        map-get($utilities, "position"),
+        (
+          responsive: true,
+        )
+      ),
+    "top":
+      map-merge(
+        map-get($utilities, "top"),
+        (
+          responsive: true,
+        )
+      ),
+    "start":
+      map-merge(
+        map-get($utilities, "start"),
+        (
+          responsive: true,
+        )
+      ),
+    "end":
+      map-merge(
+        map-get($utilities, "end"),
+        (
+          responsive: true,
+        )
+      ),
+    "translate-middle":
+      map-merge(
+        map-get($utilities, "translate-middle"),
+        (
+          responsive: true,
+        )
+      ),
+    "width":
+      map-merge(
+        map-get($utilities, "width"),
+        (
+          responsive: true,
+        )
+      ),
+    "overflow":
+      map-merge(
+        map-get($utilities, "overflow"),
+        (
+          responsive: true,
+        )
+      ),
+    "font-size":
+      map-merge(
+        map-get($utilities, "font-size"),
+        (
+          responsive: true,
+        )
+      ),
+    "background-color":
+      map-merge(
+        map-get($utilities, "background-color"),
+        (
+          responsive: true,
+        )
+      ),
+    "rounded": (
+      property: border-radius,
+      class: rounded,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-2xl),
+        6: var(--#{$prefix}border-radius-3xl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill)
+      )
+      ),
+    "rounded-top": (
+      property: border-top-left-radius border-top-right-radius,
+      class: rounded-top,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-2xl),
+        6: var(--#{$prefix}border-radius-3xl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill)
+      )
+      ),
+    "rounded-end": (
+      property: border-top-right-radius border-bottom-right-radius,
+      class: rounded-end,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-2xl),
+        6: var(--#{$prefix}border-radius-3xl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill)
+      )
+      ),
+    "rounded-bottom": (
+      property: border-bottom-right-radius border-bottom-left-radius,
+      class: rounded-bottom,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-2xl),
+        6: var(--#{$prefix}border-radius-3xl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill)
+      )
+      ),
+    "rounded-start": (
+      property: border-bottom-left-radius border-top-left-radius,
+      class: rounded-start,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-2xl),
+        6: var(--#{$prefix}border-radius-3xl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill)
+      )
+      ),
+    "max-width": (
+        property: max-width,
+        class: mw,
+        responsive: true,
+        values: (
+          100: 100%,
+          auto: auto,
+          inherit: inherit
+        )
+      ),
+  )
 );
 
 // utility
 
 .bg-cover{
-    background-size: cover;
-    background-position: center center;
+  background-size: cover;
+  background-position: center center;
 }
 .bg-top{
-    background-size: cover;
-    background-position: top center;
+  background-size: cover;
+  background-position: top center;
 }
   
 .img-cover{
-    object-fit: center;
-    object-position: center center;
+  object-fit: center;
+  object-position: center center;
 }
 
 .cursor-notAllow{
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
   

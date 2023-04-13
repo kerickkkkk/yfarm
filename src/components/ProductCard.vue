@@ -94,9 +94,9 @@ const setQty = (value) => {
 @import "bootstrap/scss/functions";
 @import "@/assets/scss/helpers/variables";
 .customBtn {
-    color: $neutral;
-    &:hover, &.active {
-        color: $primary;
-    }
+  color: $neutral;
+  &:hover, &.active {
+    color: $primary;
+  }
 }
 </style>

@@ -9,7 +9,8 @@ export const setSookie = (token, expired) => {
 }
 
 export const deleteCookie = () => {
-  document.cookie = `${projectName}Token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;`
+  document.cookie = `LoginToken=;expires=${new Date()};`
+  document.cookie = `${projectName}Token=; Path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;`
 }
 
 export const _uuid = () => {

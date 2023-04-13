@@ -149,7 +149,7 @@ defineExpose({ show })
               <img
                 v-if="tempUrl"
                 :src="tempUrl"
-                alt=""
+                alt="預覽圖片"
               >
             </div>
             <div class="col-6">
@@ -179,7 +179,7 @@ defineExpose({ show })
               <img
                 v-if="finishUrl"
                 :src="finishUrl"
-                alt=""
+                alt="上傳後的圖片"
               >
             </div>
             <hr>
@@ -207,7 +207,7 @@ defineExpose({ show })
                     <img
                       class="img-fluid"
                       :src="url"
-                      alt=""
+                      alt="預覽複製的圖片"
                     >
                     <button
                       class="btn btn-outline-primary rounded-circle position-absolute top-0 end-0 py-1 px-2"

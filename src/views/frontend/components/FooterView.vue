@@ -1,7 +1,7 @@
 <script setup>
 import { ref, inject } from 'vue'
 const swal = inject('$swal')
-const subscribeEmail = ref('1@1.cc')
+const subscribeEmail = ref('')
 const email = ref(null)
 const subcribe = (values, actions) => {
   // 無法解決 focus 問題
@@ -26,7 +26,7 @@ const subcribe = (values, actions) => {
             <img
               style="width: 120px"
               src="/logo.png"
-              alt=""
+              alt="logo"
             >
           </div>
           <div class="mb-3">

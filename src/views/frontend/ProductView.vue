@@ -69,8 +69,9 @@ onMounted(() => {
           </h1>
           <p
             class="mb-4"
-            v-html="product.description"
-          />
+          >
+            {{ product.description }}
+          </p>
           <div class="d-flex mb-4">
             <SelectCountComponent
               :qty="qty"

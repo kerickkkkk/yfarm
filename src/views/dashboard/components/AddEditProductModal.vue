@@ -131,7 +131,7 @@ defineExpose({ show })
                 <img
                   class="img-fluid"
                   :src="tempProduct.imageUrl"
-                  alt=""
+                  alt="圖片預覽"
                 >
               </div>
               <div class="mb-2">
@@ -158,7 +158,7 @@ defineExpose({ show })
                       <img
                         class="img-fluid"
                         :src="url"
-                        alt=""
+                        alt="圖片預覽"
                       >
                       <button
                         class="btn btn-outline-primary rounded-circle position-absolute top-0 end-0 py-1 px-2"

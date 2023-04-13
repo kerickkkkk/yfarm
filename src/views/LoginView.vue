@@ -21,7 +21,7 @@ const submitHandler = () => {
     const { token, expired } = data
     document.cookie = `ttShopToken=${token}; expires=${new Date(expired)};`
     swal('登入成功')
-    router.push('/admin')
+    router.push('/admin/products')
   })
     .catch((error) => {
       swal('', error?.response?.data?.message || '有錯誤', 'error')

@@ -82,7 +82,7 @@ onMounted(() => {
               v-for="cart in carts"
               :key="cart.id"
             >
-              <th>
+              <td>
                 <div class="cart__title d-flex">
                   <div class="me-3">
                     <img
@@ -96,12 +96,11 @@ onMounted(() => {
                     <div class="h6">
                       {{ cart.product.title }}
                     </div>
-                    <p>規格</p>
                   </div>
                 </div>
-              </th>
+              </td>
               <td class="text-end">
-                NT ${{ currency(cart.product.price) }}
+                NTD {{ currency(cart.product.price) }}
               </td>
               <td>
                 <div
@@ -122,7 +121,7 @@ onMounted(() => {
                     :value="cart.qty"
                     type="number"
                     min="1"
-                    class="form-control rounded-0"
+                    class="form-control text-center rounded-0"
                     style="width: 80px"
                     @input="handleValue(cart, $event)"
                     @change="handleValue(cart, $event, 'change')"
@@ -138,7 +137,7 @@ onMounted(() => {
                 </div>
               </td>
               <td class="text-end">
-                NT ${{ currency(cart.final_total) }}
+                NTD {{ currency(cart.final_total) }}
               </td>
               <td>
                 <button
@@ -171,7 +170,7 @@ onMounted(() => {
               class="text-end"
               colspan="100"
             >
-              原價 NT $ {{ currency(total) }}
+              原價 NTD  {{ currency(total) }}
             </td>
           </tr>
           <tr>
@@ -179,7 +178,7 @@ onMounted(() => {
               class="text-end"
               colspan="100"
             >
-              總價 NT $ {{ currency(finalTotal) }}
+              總價 NTD  {{ currency(finalTotal) }}
             </td>
           </tr>
         </tfoot>

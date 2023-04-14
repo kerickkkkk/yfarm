@@ -20,7 +20,7 @@ const props = defineProps({
     </div>
     <div class="col-md-4 mb-2">
       <div
-        :class="[props.step > 1 ? 'text-white bg-primary' : 'text-dark bg-light']"
+        :class="[props.step > 1 ? 'text-white bg-primary' : 'text-dark border']"
         class="fs-1 rounded-5 text-center rounded-start-0 py-3 w-75 m-x-auto"
       >
         填寫資料
@@ -28,7 +28,7 @@ const props = defineProps({
     </div>
     <div class="col-md-4 mb-2">
       <div
-        :class="[props.step > 2 ? 'text-white bg-primary' : 'text-dark bg-light']"
+        :class="[props.step > 2 ? 'text-white bg-primary' : 'text-dark border']"
         class="fs-1 rounded-5 text-center rounded-start-0 py-3 w-75 m-x-auto"
       >
         訂購完成

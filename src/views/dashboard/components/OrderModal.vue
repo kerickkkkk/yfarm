@@ -118,7 +118,7 @@ defineExpose({ show })
                       總價
                     </th>
                     <td>
-                      {{ `NT ${currency(tempOrder.total)}` }}
+                      {{ `NTD ${currency(tempOrder.total)}` }}
                     </td>
                   </tr>
                 </tbody>
@@ -140,7 +140,7 @@ defineExpose({ show })
                       width="100"
                       class="text-end"
                     >
-                      {{ `NT ${currency(product.final_total)}` }}
+                      {{ `NTD ${currency(product.final_total)}` }}
                     </td>
                   </tr>
                 </tbody>

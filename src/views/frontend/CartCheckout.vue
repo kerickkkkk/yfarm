@@ -127,7 +127,7 @@ onMounted(() => {
                     {{ currency(cart.product.price) }} X {{ cart.qty }}
                   </td>
                   <td class="text-end">
-                    NT ${{ cart.final_total }}
+                    NTD ${{ cart.final_total }}
                   </td>
                 </tr>
               </template>
@@ -152,7 +152,7 @@ onMounted(() => {
                   class="text-end"
                   colspan="100"
                 >
-                  原價 NT $ {{ total }}
+                  原價 NTD $ {{ total }}
                 </td>
               </tr>
               <tr>
@@ -160,7 +160,7 @@ onMounted(() => {
                   class="text-end"
                   colspan="100"
                 >
-                  總價 NT $ {{ finalTotal }}
+                  總價 NTD $ {{ finalTotal }}
                 </td>
               </tr>
             </tfoot>
@@ -176,7 +176,7 @@ onMounted(() => {
             <label
               for="name"
               class="form-label"
-            >姓名</label>
+            > <span class="text-danger">*</span> 姓名</label>
             <VField
               id="name"
               v-model="userData.name"
@@ -196,7 +196,7 @@ onMounted(() => {
             <label
               for="email"
               class="form-label"
-            >Email</label>
+            > <span class="text-danger">*</span> Email</label>
             <VField
               id="email"
               v-model="userData.email"
@@ -217,7 +217,7 @@ onMounted(() => {
             <label
               for="tel"
               class="form-label"
-            >電話</label>
+            > <span class="text-danger">*</span> 電話</label>
             <VField
               id="tel"
               v-model="userData.tel"
@@ -237,7 +237,7 @@ onMounted(() => {
             <label
               for="address"
               class="form-label"
-            >地址</label>
+            > <span class="text-danger">*</span> 地址</label>
             <VField
               id="address"
               v-model="userData.address"

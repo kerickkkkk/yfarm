@@ -38,10 +38,10 @@ const setQty = (value) => {
     <button
       :class="{active: likesGetter?.includes(props.item.id)}"
       type="button"
-      class="customBtn position-absolute top-0 end-0 bg-light fs-2 p-4 rounded-circle border m-5"
+      class="customBtn position-absolute top-0 end-0 bg-light fs-2 p-6 rounded-circle border m-5"
       @click="setLike(props.item.id)"
     >
-      <i class="bi bi-heart-fill" />
+      <i class="bi bi-heart-fill fs-16 position-absolute start-50 top-50 translate-middle" />
     </button>
     <img
       :src="props.item.imageUrl"
@@ -53,15 +53,15 @@ const setQty = (value) => {
       <h3 class="card-title h4 text-center mb-2">
         {{ props.item.title }}
       </h3>
-      <div class="price d-flex w-25 mx-auto mb-5">
+      <div class="price d-flex justify-content-end mb-5">
         <div class="original h4">
-          ${{ currency(props.item.price) }}
+          NTD {{ currency(props.item.price) }}
         </div>
         <del
           v-if="props.item.price !== props.item.origin_price"
           class="ms-auto h4 text-neutral"
         >
-          ${{ currency(props.item.origin_price) }}
+          NTD {{ currency(props.item.origin_price) }}
         </del>
       </div>
 

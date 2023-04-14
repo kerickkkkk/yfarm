@@ -4,11 +4,13 @@ import Pagination from '@/components/base/PaginationComponent.vue'
 import { getOrdersApi, putOrderApi, deleteOrderApi } from '@/api/dashboard/order.js'
 import { getLocalDate, currency } from '@/utils/filters.js'
 import OrderModal from './components/OrderModal.vue'
+import DeleteItemModal from '../../components/modal/DeleteItemModal.vue'
+
 const swal = inject('$swal')
 const orderModel = ref(null)
 const orders = ref([])
 const pagination = ref(null)
-
+const deleteOrderModal = ref(null)
 const getOrders = (page = 1) => {
   getOrdersApi(page)
     .then(({ data }) => {
@@ -18,6 +20,12 @@ const getOrders = (page = 1) => {
     .catch((error) => {
       swal('', error?.response?.data?.message || '有錯誤', 'error')
     })
+}
+const openDeleteModal = (order) => {
+  deleteOrderModal.value.show({
+    id: order.id,
+    title: order.id
+  })
 }
 const putOrder = (order, e) => {
   // 如果是 checked 要用 checked 不然會找不到值
@@ -32,6 +40,7 @@ const putOrder = (order, e) => {
     })
 }
 const deleteOrder = (id) => {
+  deleteOrderModal.value.hide()
   deleteOrderApi(id)
     .then(({ data }) => {
       swal(`訂單：${id}，${data.message} `)
@@ -101,7 +110,7 @@ onMounted(() => {
             </td>
             <!--  -->
             <td class="text-end">
-              NT {{ currency(order.total) }}
+              NTD {{ currency(order.total) }}
             </td>
             <td>
               <div class="form-check form-switch">
@@ -135,7 +144,7 @@ onMounted(() => {
                 <button
                   type="button"
                   class="btn btn-outline-danger"
-                  @click="deleteOrder(order.id)"
+                  @click="openDeleteModal(order)"
                 >
                   刪除
                 </button>
@@ -162,4 +171,9 @@ onMounted(() => {
       @get-items="getOrders"
     />
   </div>
+  <DeleteItemModal
+    ref="deleteOrderModal"
+    modal-title="訂單"
+    @delete-method="deleteOrder"
+  />
 </template>

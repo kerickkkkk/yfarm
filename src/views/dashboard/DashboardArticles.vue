@@ -4,8 +4,10 @@ import Pagination from '@/components/base/PaginationComponent.vue'
 import { getArticlesApi, deleteArticleApi } from '@/api/dashboard/articles.js'
 import { getLocalDate } from '@/utils/filters.js'
 import ModifyArticlesModal from '@/views/dashboard/components/ModifyArticlesModal.vue'
+import DeleteItemModal from '../../components/modal/DeleteItemModal.vue'
 const swal = inject('$swal')
 const articleModel = ref(null)
+const deleteArticleModal = ref(null)
 const articles = ref([])
 const pagination = ref(null)
 
@@ -20,6 +22,7 @@ const getArticles = (page = 1) => {
     })
 }
 const deleteArticle = (id) => {
+  deleteArticleModal.value.hide()
   deleteArticleApi(id)
     .then(({ data }) => {
       swal(`文章：${id}，${data.message} `)
@@ -29,7 +32,12 @@ const deleteArticle = (id) => {
       swal('', error?.response?.data?.message || '有錯誤', 'error')
     })
 }
-
+const openDeleteModal = (article) => {
+  deleteArticleModal.value.show({
+    id: article.id,
+    title: article.title
+  })
+}
 const openModal = (isNew, tempArticle) => {
   articleModel.value.show(isNew, { ...tempArticle })
 }
@@ -120,20 +128,6 @@ onMounted(() => {
               {{ article.description }}
             </td>
             <td>
-              <!-- 暫留 切換模式 -->
-              <!-- <div class="form-check form-switch">
-                <input
-                  :id="`customSwitch${article.id}`"
-                  :checked="article.isPublic"
-                  class="form-check-input"
-                  type="checkbox"
-                >
-                <label
-                  class="form-check-label"
-                  :class="{'text-success': article.isPublic }"
-                  :for="`customSwitch${ article.id }`"
-                >{{ article.isPublic ? "發布" : "未發布" }}</label>
-              </div> -->
               <div
                 class="form-check-label"
                 :class="{'text-success': article.isPublic }"
@@ -156,7 +150,7 @@ onMounted(() => {
                 <button
                   type="button"
                   class="btn btn-outline-danger"
-                  @click="deleteArticle(article.id)"
+                  @click="openDeleteModal(article)"
                 >
                   刪除
                 </button>
@@ -183,4 +177,9 @@ onMounted(() => {
       @get-page="getArticles"
     />
   </div>
+  <DeleteItemModal
+    ref="deleteArticleModal"
+    modal-title="文章"
+    @delete-method="deleteArticle"
+  />
 </template>

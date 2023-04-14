@@ -127,7 +127,7 @@ onMounted(() => {
       </p>
     </div>
   </div>
-  <div class="container-fluid">
+  <div class="container">
     <div class="row mb-8">
       <h3 class="text-center mt-4 mb-9">
         猜您喜歡

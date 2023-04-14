@@ -131,9 +131,9 @@ onMounted(() => {
                 @click="offcanvasHide"
               >
                 <div class="position-md-relative">
-                  <i class="bi bi-cart-fill" />
-                  <div class="position-absolute top-md-0 top-50 fs-md-6 end-md-auto end-0 start-md-100 rounded-circle text-white py-md-0 py-1 px-2 bg-secondary translate-middle-md translate-middle-y">
-                    {{ cartsGetter.length }}
+                  <i class="bi bi-cart-fill fs-4" />
+                  <div class="position-absolute top-md-0 top-50 fs-md-6 end-md-auto end-0 start-md-100 rounded-circle text-white py-md-0 py-1 px-2 bg-secondary translate-middle-md translate-middle-y me-2 me-md-0">
+                    <span class="fs-6"> {{ cartsGetter.length }}</span>
                   </div>
                 </div>
               </RouterLink>
@@ -146,12 +146,12 @@ onMounted(() => {
                 @click="offcanvasHide"
               >
                 <div
-                  class="position-md-relative"
+                  class="position-relative"
                   @click="offcanvasHide"
                 >
-                  <i class="bi bi-heart-fill" />
-                  <div class="position-absolute top-md-0 top-50 fs-md-6 end-md-auto end-0 start-md-100 rounded-circle text-white py-md-0 py-1 px-2 bg-secondary translate-middle-md translate-middle-y">
-                    {{ likesGetter.length }}
+                  <i class="bi bi-heart-fill fs-4" />
+                  <div class="position-absolute top-md-0 top-50 fs-md-6 end-md-auto end-0 start-md-100 rounded-circle text-white py-md-0 py-1 px-2 bg-secondary translate-middle-md translate-middle-y me-2 me-md-0">
+                    <span class="fs-6"> {{ likesGetter.length }}</span>
                   </div>
                 </div>
               </RouterLink>
@@ -163,7 +163,7 @@ onMounted(() => {
                 aria-current="page"
                 @click="offcanvasHide"
               >
-                <i class="bi bi-person-fill" />
+                <i class="bi bi-person-fill fs-4" />
               </RouterLink>
             </li>
           </ul>

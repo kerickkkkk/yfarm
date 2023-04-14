@@ -14,9 +14,14 @@ const { productsGetter: products } = storeToRefs(productsStore)
 const modules = ref(
   [Pagination]
 )
+const sale = ref(null)
 const filterProducts = computed(() => {
   return products.value.filter(item => item.origin_price !== item.price)
 })
+const goToSection = () => {
+  sale.value.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+}
+
 onMounted(() => {
   getProducts()
 })
@@ -30,8 +35,11 @@ onMounted(() => {
       class="mySwiper position-relative rounded-5 rounded-top-0"
       style="height:720px"
     >
-      <SwiperSlide style="backgroundImage: url(./images/ImgBanner.png)">
-        <div class="container">
+      <SwiperSlide
+        style="backgroundImage: url(./images/ImgBanner.png)"
+        class="position-relative"
+      >
+        <div class="container position-relative">
           <div class="row justify-content-center">
             <div class="col-8 col-md-6">
               <div class="h1 text-white">
@@ -41,10 +49,19 @@ onMounted(() => {
             </div>
           </div>
         </div>
+        <button
+          class="btn btn-outline-primary border-0 position-absolute bottom-0 start-50 translate-middle-x"
+          @click="goToSection"
+        >
+          <i class="display-1 text-white bi bi-chevron-double-down" />
+        </button>
       </SwiperSlide>
     </Swiper>
   </section>
-  <section class="sale pb-13">
+  <section
+    ref="sale"
+    class="sale pb-13"
+  >
     <h2 class="text-center mb-9">
       <span class="dot">
         促銷商品
@@ -68,7 +85,7 @@ onMounted(() => {
       <SwiperSlide
         v-for="item in filterProducts"
         :key="item"
-        class="col-4 pb-9"
+        class="col-4 bg-transparent pb-9"
       >
         <div class="w-100">
           <ProductCard
@@ -82,8 +99,8 @@ onMounted(() => {
     class="goal"
     style="height: 720px"
   >
-    <div class="container-fluid position-relative  pb-13">
-      <div class="col-md-7 position-md-absolute end-0">
+    <div class="container-fluid position-relative pb-13">
+      <div class="col-md-7 position-md-absolute end-0 mb-md-0 mb-6">
         <img
           class="rounded-start-5"
           src="/images/ImgAbout01.png"
@@ -93,7 +110,7 @@ onMounted(() => {
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <h2 class="mb-11">
+            <h2 class="mb-md-11 mb-6">
               <span class="dot">
                 創立初衷
               </span>
@@ -115,7 +132,7 @@ onMounted(() => {
   <section class="feature pb-13">
     <div class="container">
       <div class="row justify-content-md-between align-items-md-center">
-        <div class="col-md-7">
+        <div class="col-md-7 mb-md-0 mb-6">
           <img
             class="rounded-5"
             src="/images/ImgAbout02.png"
@@ -123,7 +140,7 @@ onMounted(() => {
           >
         </div>
         <div class="col-md-4">
-          <h2 class="mb-11">
+          <h2 class="mb-md-11 mb-6">
             <span class="dot">
               產品特色
             </span>
@@ -206,7 +223,7 @@ onMounted(() => {
 :deep(.swiper-pagination-bullet) {
   width : calc(100vw * 72 / 1320);
   border-radius: 4px;
-  height: 3px;
+  height: 6px;
   background-color: #fff;
   opacity: 1;
   &.swiper-pagination-bullet-active{

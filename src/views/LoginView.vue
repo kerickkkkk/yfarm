@@ -65,7 +65,7 @@ const submitHandler = () => {
             placeholder="請輸入 Email"
             rules="email|required"
           />
-          <error-message
+          <ErrorMessage
             name="email"
             class="invalid-feedback"
           />
@@ -89,8 +89,7 @@ const submitHandler = () => {
           placeholder="請輸入 密碼"
           rules="required"
         />
-        <error-message
-          v-model="password"
+        <ErrorMessage
           name="密碼"
           class="invalid-feedback"
         />

@@ -65,10 +65,10 @@ defineExpose({ show })
   >
     <div class="modal-dialog">
       <div class="modal-content border-0">
-        <div class="modal-header bg-danger text-white">
+        <div class="modal-header bg-danger">
           <h5
             id="delProductModalLabel"
-            class="modal-title"
+            class="modal-title text-white"
           >
             <span>刪除產品</span>
           </h5>

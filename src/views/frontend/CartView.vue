@@ -59,14 +59,23 @@ onMounted(() => {
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">
-              商品選項
+            <th
+              class="d-md-table-cell d-none"
+              scope="col"
+            >
+              商品
             </th>
-            <th scope="col">
+            <th
+              class="d-md-table-cell d-none"
+              scope="col"
+            >
               單價
             </th>
-            <th scope="col">
-              數量
+            <th
+              class="text-center"
+              scope="col"
+            >
+              <span class="d-md-none d-inline-block">商品/</span>數量
             </th>
             <th scope="col">
               小計
@@ -81,8 +90,11 @@ onMounted(() => {
             <tr
               v-for="cart in carts"
               :key="cart.id"
+              class="align-middle"
             >
-              <td>
+              <td
+                class="d-md-table-cell d-none"
+              >
                 <div class="cart__title d-flex">
                   <div class="me-3">
                     <img
@@ -93,47 +105,54 @@ onMounted(() => {
                     >
                   </div>
                   <div class="cart__title__content">
-                    <div class="h6">
+                    <div class="fw-bold">
                       {{ cart.product.title }}
                     </div>
                   </div>
                 </div>
               </td>
-              <td class="text-end">
+              <td
+                class="d-md-table-cell d-none text-end"
+              >
                 NTD {{ currency(cart.product.price) }}
               </td>
               <td>
-                <div
-                  class="btn-group"
-                  role="group"
-                  aria-label="Basic checkbox toggle button group"
-                >
-                  <button
-                    :disabled="cart.qty < 2"
-                    type="button"
-                    class="btn btn-primary"
-                    @click="updateCart(cart.id, cart.product.id, --cart.qty)"
+                <div class="fw-bold mb-1 text-center">
+                  {{ cart.product.title }}
+                </div>
+                <div class="text-center">
+                  <div
+                    class="btn-group"
+                    role="group"
+                    aria-label="Basic checkbox toggle button group"
                   >
-                    -
-                  </button>
+                    <button
+                      :disabled="cart.qty < 2"
+                      type="button"
+                      class="btn btn-primary"
+                      @click="updateCart(cart.id, cart.product.id, --cart.qty)"
+                    >
+                      -
+                    </button>
 
-                  <input
-                    :value="cart.qty"
-                    type="number"
-                    min="1"
-                    class="form-control text-center rounded-0"
-                    style="width: 80px"
-                    @input="handleValue(cart, $event)"
-                    @change="handleValue(cart, $event, 'change')"
-                  >
+                    <input
+                      :value="cart.qty"
+                      type="number"
+                      min="1"
+                      class="form-control text-center rounded-0"
+                      style="width: 80px"
+                      @input="handleValue(cart, $event)"
+                      @change="handleValue(cart, $event, 'change')"
+                    >
 
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    @click="updateCart(cart.id, cart.product.id, ++cart.qty)"
-                  >
-                    +
-                  </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      @click="updateCart(cart.id, cart.product.id, ++cart.qty)"
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
               </td>
               <td class="text-end">
@@ -194,3 +213,12 @@ onMounted(() => {
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+@import '@/assets/scss/all';
+@include media-breakpoint-up(md) {
+  .d-md-table-cell{
+    display: table-cell !important;
+  }
+}
+</style>

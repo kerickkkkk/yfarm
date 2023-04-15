@@ -21,7 +21,7 @@ const subcribe = (values, actions) => {
   >
     <div class="container text-white">
       <div class="row align-items-end">
-        <div class="col-md-5">
+        <div class="col-md-5 mb-8 mb-md-0">
           <div class="mb-3">
             <img
               style="width: 120px"
@@ -76,20 +76,20 @@ const subcribe = (values, actions) => {
             © 楊家農舍 2023
           </div>
         </div>
-        <div class="col-md-4 ms-md-auto mb-md-5 mb-4">
+        <div class="col-md-4 ms-md-auto mb-8 mb-md-4">
           <div>
-            <h5 class="h4 text-white mb-3">
+            <h5 class="h4 text-white mb-5">
               聯絡我們
             </h5>
             <ul>
               <li
-                class="d-flex mb-4"
+                class="d-flex mb-3 mb-md-4"
               >
                 <div>營業時間</div>
                 <div>09:00 - 17:00</div>
               </li>
               <li
-                class="d-flex mb-4"
+                class="d-flex mb-3 mb-md-4"
               >
                 <div class="me-7">
                   電話
@@ -113,7 +113,7 @@ const subcribe = (values, actions) => {
           </div>
         </div>
         <div class="col-md-2 mb-md-5 mb-4">
-          <h5 class="h4 text-white mb-4">
+          <h5 class="h4 text-white mb-5 ">
             加入官方帳號
           </h5>
           <div

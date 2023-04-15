@@ -1,3 +1,4 @@
+/* global process */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint'
@@ -10,7 +11,8 @@ const DRIVE_LETTER_REGEX = /^[a-z]:/i
 // https://vitejs.dev/config/
 export default defineConfig({
   // https://cn.vitejs.dev/config/shared-options.html#base
-  base: '/yfarm/',
+  // https://israynotarray.com/nodejs/20230214/796256725/#%E8%A8%AD%E7%BD%AE-Vite
+  base: process.env.NODE_ENV === 'production' ? '/yfarm/' : '/',
   plugins: [
     vue(),
     eslintPlugin({

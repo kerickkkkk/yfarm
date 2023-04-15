@@ -42,9 +42,10 @@ onMounted(() => {
         <div class="container position-relative">
           <div class="row justify-content-center">
             <div class="col-8 col-md-6">
-              <div class="h1 text-white">
-                來一塊花生糖，砌一壺茶，
-                心都暖了起來。
+              <div class="h1 text-center text-white">
+                <span>來一塊花生糖，</span>
+                <span class="d-md-inline-block d-block">砌一壺茶，</span>
+                <span class="d-block">來心都暖了起來。</span>
               </div>
             </div>
           </div>

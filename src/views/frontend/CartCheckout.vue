@@ -117,17 +117,17 @@ onMounted(() => {
                         >
                       </div>
                       <div class="cart__title__content">
-                        <div class="h6">
+                        <div class="fw-bold">
                           {{ cart.product.title }}
                         </div>
                       </div>
                     </div>
                   </th>
                   <td class="text-end">
-                    {{ currency(cart.product.price) }} X {{ cart.qty }}
+                    NTD {{ currency(cart.product.price) }} X {{ cart.qty }}
                   </td>
                   <td class="text-end">
-                    NTD ${{ cart.final_total }}
+                    NTD {{ cart.final_total }}
                   </td>
                 </tr>
               </template>
@@ -152,7 +152,7 @@ onMounted(() => {
                   class="text-end"
                   colspan="100"
                 >
-                  原價 NTD $ {{ total }}
+                  原價 NTD {{ total }}
                 </td>
               </tr>
               <tr>
@@ -160,7 +160,7 @@ onMounted(() => {
                   class="text-end"
                   colspan="100"
                 >
-                  總價 NTD $ {{ finalTotal }}
+                  總價 NTD {{ finalTotal }}
                 </td>
               </tr>
             </tfoot>

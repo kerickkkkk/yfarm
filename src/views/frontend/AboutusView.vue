@@ -33,7 +33,7 @@ import BannerView from './components/BannerView.vue'
       </div>
       <div class="col-md-6 mb-6">
         <div class="d-flex justify-content-center align-items-center h-100">
-          <p class="lh-lg">
+          <p class="col-10 lh-lg">
             農舍的目的就是希望可以在現在的農村生態裡，藉由版主在這些年出外求學及工作經驗，提高農民每一季的所得，讓有心在這一片土地上耕耘的人，除了將收成全數賣給大盤商外，有另一條銷售管道可以選擇。
           </p>
         </div>
@@ -48,7 +48,7 @@ import BannerView from './components/BannerView.vue'
       </div>
       <div class="col-md-6 mb-6">
         <div class="d-flex justify-content-center align-items-center h-100">
-          <div>
+          <div class="col-10">
             <p class="lh-lg">
               從自家的農作物銷售是心裡夢想的起點，如果能得到父母親及家裡數代務農長輩們的認同，瞭解及接受除了大盤商之外，是還能有另一個路可以選擇的。
             </p>

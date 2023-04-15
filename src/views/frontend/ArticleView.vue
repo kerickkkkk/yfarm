@@ -64,10 +64,10 @@ onMounted(() => {
                     class="badge rounded-pill text-bg-light"
                   >{{ item }}</span>
                 </div>
-                <h2 class="card-title">
+                <h2 class="text-center card-title">
                   {{ article.title }}
                 </h2>
-                <p class="card-text">
+                <p class="col-10 col-lg-8 mx-auto card-text">
                   {{ article.content }}
                 </p>
                 <p class="card-text text-end">

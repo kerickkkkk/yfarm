@@ -27,7 +27,7 @@ import BannerView from './components/BannerView.vue'
     <div class="row justify-content-center">
       <div class="col-md-8">
         <h3><i class="bi bi-info-circle" /> 商品保存期限</h3>
-        <p class="ps-4 mb-5">
+        <p class="col-lg-8 col-10 ps-4 mb-5">
           保存期限三個月未開封，這是指該商品在正確儲存的情況下可以保持最佳品質的時間。如果您在保存期限內沒有開封該商品，那麼您可以放心地享用這些新鮮的商品。這樣不僅能確保您的健康，還能讓您品嚐到商品的最佳口感和風味。
         </p>
         <h3><i class="bi bi-info-circle" /> 取消、修改訂單</h3>
